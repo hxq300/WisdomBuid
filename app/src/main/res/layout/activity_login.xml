@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/login_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        android:src="@mipmap/zhitieyun"
+        android:textSize="45sp" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/login_wisdom_sit"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/login_app_name"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="6.5dp"-->
+    <!--        android:letterSpacing="0.5"-->
+    <!--        android:text="Wisdom site"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="15sp" />-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:orientation="vertical"
+        android:paddingLeft="19.5dp"
+        android:paddingRight="19.5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/input_bg_white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:src="@mipmap/phone_icon" />
+
+            <EditText
+                android:id="@+id/login_et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColor="@color/three"
+                android:textColorHint="@color/nine_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/fenge"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/input_bg_white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:src="@mipmap/pass_icon" />
+
+            <EditText
+                android:id="@+id/login_et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输密码"
+                android:inputType="textPassword"
+                android:textColor="@color/three"
+                android:textColorHint="@color/nine_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/fenge"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <RadioGroup
+            android:visibility="invisible"
+            android:id="@+id/login_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/ten"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtn_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@drawable/checkbox_radio_blue"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/five"
+                android:text="@string/manager"
+                android:textColor="@color/six"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_labor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/btn_circular"
+                android:button="@drawable/checkbox_radio_blue"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/five"
+                android:text="@string/contract_workers"
+                android:textColor="@color/six"
+                android:textSize="12sp" />
+
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/thirty"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/input_bg_blue"
+            android:onClick="login"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/five"
+            android:layout_marginRight="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:onClick="updatePass"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:text="忘记密码"
+                android:textColor="@color/six"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

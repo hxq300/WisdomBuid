@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/title_line"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/btn_bule"
+        android:paddingTop="36dp">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:onClick="back"
+            android:padding="10dp"
+            android:src="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/text_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="正在考试"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/text_reight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:onClick="submitPaper"
+            android:paddingRight="16dp"
+            android:text="交卷"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/quest_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:gravity="center_vertical"
+            android:text="44:22"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/f_six"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/quest_shang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/quest_page_no"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="15/35"
+            android:textColor="@color/three"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/quest_xia"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="questionsNext"
+            android:text="下一题"
+            android:textColor="@color/three"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_line"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/f_six"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/btn_circular">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/ten">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/thirty"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/quest_choice_index"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1."
+                    android:textColor="@color/three"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/quest_choice_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/five"
+                    android:layout_toRightOf="@id/quest_choice_index"
+                    android:background="@drawable/questions_line"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/five"
+                    android:paddingTop="2dp"
+                    android:paddingRight="@dimen/five"
+                    android:paddingBottom="2dp"
+                    android:text="选择题"
+                    android:textColor="@color/six"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/quest_choice_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                android:gravity="bottom"
+                android:lineHeight="@dimen/thirty"
+                android:text="\u3000\u3000\u3000\u3000依据《建设工程安全生产管理条例》，施工单位应当设立安全生产(    )机构，配备专职安全生产管理人员。"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/line_xuanzeti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/quest_choice_a"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="choiceSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="A．检查"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/quest_choice_b"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="choiceSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="B．监督"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/quest_choice_c"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="choiceSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="C．监理"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/quest_choice_d"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="choiceSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="D．管理"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_panduanti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/quest_judge_true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="judgeSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="A．√"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/quest_judge_false"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/f_six"
+                android:gravity="center_vertical"
+                android:onClick="judgeSelect"
+                android:paddingLeft="@dimen/ten"
+                android:text="B．×"
+                android:textColor="@color/three"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_tiankongti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/thirty"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:background="@color/f_six"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/ten"
+                    android:text="①．"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/questions_edit_one"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_just_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/thirty"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:background="@color/f_six"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/ten"
+                    android:text="②．"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/questions_edit_two"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_jianda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="请输入答案"
+            android:lineHeight="@dimen/thirty"
+            android:minLines="5"
+            android:padding="@dimen/ten"
+            android:text="答："
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

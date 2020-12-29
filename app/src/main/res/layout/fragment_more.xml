@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/btn_bule">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/line_height"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="拍照上传"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+    <com.lsy.wisdombuid.widget.RecyclerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/upload_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/btn_circular"
+                android:layout_marginTop="@dimen/ten"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbtn_anquan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/checkbox_radio_blue"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/five"
+                    android:text="安全问题"
+                    android:textColor="@color/six"
+                    android:textSize="12sp" />
+                <!--                质量问题暂时隐藏-->
+                <RadioButton
+                    android:id="@+id/rbtn_zhiliang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/btn_circular"
+                    android:button="@drawable/checkbox_radio_blue"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/five"
+                    android:text="质量问题"
+                    android:textColor="@color/six"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+
+            </RadioGroup>
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginTop="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="标题："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/upload_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/five"
+                    android:background="@null"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="工点："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/more_tv_station"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:layout_marginLeft="@dimen/twelve"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/xiala_blue"
+                    android:drawablePadding="@dimen/seven"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/twelve"
+                    android:text="上海站"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="类型："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/more_tv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:layout_marginLeft="@dimen/twelve"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/xiala_blue"
+                    android:drawablePadding="@dimen/seven"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/twelve"
+                    android:text="上海站"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="工序名称："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/more_tv_gongxu"
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/twelve"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/xiala_blue"
+                    android:drawablePadding="@dimen/seven"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/twelve"
+                    android:text="工序名称"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="问题内容："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/five"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@drawable/text_grey_line"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/ten"
+                android:paddingTop="@dimen/five">
+
+                <!--        <LinearLayout-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_marginLeft="@dimen/btn_circular"-->
+                <!--            android:layout_marginTop="@dimen/five"-->
+                <!--            android:layout_marginRight="@dimen/btn_circular"-->
+                <!--            android:background="@drawable/text_grey_line"-->
+                <!--            android:orientation="horizontal"-->
+                <!--            android:padding="@dimen/five">-->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:paddingLeft="@dimen/five"
+                    android:paddingRight="@dimen/five"
+                    android:src="@mipmap/edit_icon" />
+
+                <EditText
+                    android:id="@+id/upload_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="请输上报内容……"
+                    android:lineHeight="22dp"
+                    android:minLines="5"
+                    android:textColor="@color/three"
+                    android:textColorHint="@color/nine_text"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="分包单位："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/more_tv_utils"
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/twelve"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/xiala_blue"
+                    android:drawablePadding="@dimen/seven"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/twelve"
+                    android:text="这是分包单位"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/twelve"
+                android:paddingRight="@dimen/twelve">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="责任人："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/upload_zerenren"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/five"
+                    android:background="@null"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/three"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/fenge"
+                android:layout_marginLeft="@dimen/twelve"
+                android:layout_marginRight="@dimen/twelve" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thirty"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/ten">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传图片："
+                    android:textColor="@color/six"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(可上传8张图片)"
+                    android:textColor="@color/nine_text"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/main_recycler_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginRight="@dimen/ten">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <!--        <androidx.recyclerview.widget.RecyclerView-->
+                <!--            android:id="@+id/recycler_zhenggaitongzhidan"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_marginLeft="@dimen/ten"-->
+                <!--            android:layout_marginRight="@dimen/ten">-->
+
+                <!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="118dp"
+                android:layout_height="@dimen/line_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/btn_circular"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/input_bg_blue"
+                android:text="上传"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </com.lsy.wisdombuid.widget.RecyclerScrollView>
+
+</LinearLayout>

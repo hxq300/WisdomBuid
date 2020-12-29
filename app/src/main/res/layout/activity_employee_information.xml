@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_hui"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_weight="1"
+            android:text="照片"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/employee_image"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="@dimen/margin"
+            android:padding="@dimen/five"
+            android:src="@mipmap/mine_head" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名："
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/employee_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="刘洪年"
+            android:textColor="@color/three"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工种："
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/employee_gongzhong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="电焊工"
+            android:textColor="@color/three"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="所属部门："
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/employee_bumen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="苏州地铁项目部"
+            android:textColor="@color/three"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="所在公司："
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/employee_gongsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="中铁十一局第一公司"
+            android:textColor="@color/three"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/input_bg_blue"
+        android:onClick="btnCommit"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

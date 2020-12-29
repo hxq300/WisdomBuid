@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lsy.wisdombuid">
+
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:sharedUserId="android.uid.system"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.FlashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.lsy.wisdombuid.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="nosensor" />
+
+        <!--扫描页面-->
+        <activity
+            android:name=".qr.QRActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--登录页面-->
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--忘记密码-->
+        <activity
+            android:name=".activity.login.LostPasswordActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--密码重置成功-->
+        <activity
+            android:name=".activity.login.UpdateSuccessActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--注册页面-->
+        <activity
+            android:name=".activity.login.RegisterActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--个人资料-->
+        <activity
+            android:name=".activity.PersionDataActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--我的消息-->
+        <activity
+            android:name=".activity.MyMessageActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--关于我们-->
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--邀请好友-->
+        <activity
+            android:name=".activity.InviteFriendsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--清除缓存-->
+        <activity
+            android:name=".activity.ClearCacheActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--系统设置-->
+        <activity
+            android:name=".activity.SysSettingActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--语言切换-->
+        <activity
+            android:name=".activity.LanguageSetActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--隐私协议-->
+        <activity
+            android:name=".activity.PrivacyAgreementActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--账号管理-->
+        <activity
+            android:name=".activity.ITunesActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--积分兑换-->
+        <activity
+            android:name=".activity.integral.CreditsExchangeActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--积分商城-->
+        <activity
+            android:name=".activity.integral.IntegralShopActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--我的积分-->
+        <activity
+            android:name=".activity.integral.MyIntegralActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--兑换记录-->
+        <activity
+            android:name=".activity.integral.ForRecordActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--人员管理-->
+        <activity
+            android:name=".activity.PersonnelManagementActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--物料监测系统-->
+        <activity
+            android:name=".activity.materia.MaterialMonitoringSystemActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--体验记录-->
+        <activity
+            android:name=".activity.persion.ExperienceRecordActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--在线签名-->
+        <activity
+            android:name=".activity.OnlineSignatureActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--体验项目详情及人员-->
+        <activity
+            android:name=".activity.persion.ExperienceActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--安全管理系统-->
+        <activity
+            android:name=".activity.safety.SafetyManagementActivity"
+            android:screenOrientation="nosensor" />
+
+
+        <!--待整改-->
+        <activity
+            android:name=".activity.safety.AfterRectificationActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--检查记录-->
+        <activity
+            android:name=".activity.safety.InspectionRecordActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--检查记录详情-->
+        <activity
+            android:name=".activity.safety.InsRecordDetailsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--整改通知单-->
+        <activity
+            android:name=".activity.safety.RectificationNoticeActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--整改上报-->
+        <activity
+            android:name=".activity.safety.ZhengGaiReportActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--整改复查列表-->
+        <activity
+            android:name=".activity.safety.ReviewListActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--整改复查-->
+        <activity
+            android:name=".activity.safety.ZhengGaiReviewActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--综合隐患分析-->
+        <activity
+            android:name=".activity.safety.QuantityAnalysisDangerActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--分包单位隐患分析-->
+        <activity
+            android:name=".activity.safety.FenBaoYinghuanFenxiActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--隐患上报-->
+        <activity
+            android:name=".activity.safety.TroubleReportActivity"
+            android:screenOrientation="nosensor" />
+
+
+        <!--质量管理系统-->
+        <activity
+            android:name=".activity.quality.QMSActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--质量管理系统-->
+        <activity
+            android:name=".activity.quality.QMSRecordActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--检查记录审核-->
+        <activity
+            android:name=".activity.quality.QMSReviewActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--整改复查料列表-->
+        <activity
+            android:name=".activity.quality.QMSReviewListActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--质量待整改-->
+        <activity
+            android:name=".activity.quality.WaitReActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--质量整改上报-->
+        <activity
+            android:name=".activity.quality.QMSReportActivity"
+            android:screenOrientation="nosensor" />
+
+
+        <!--培训考核-->
+        <activity
+            android:name=".activity.exam.TrainingCheckActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--进度管理-->
+        <activity
+            android:name=".activity.progress.ScheduleControlActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--培训课程-->
+        <activity
+            android:name=".activity.exam.TrainingCoursesActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="nosensor" />
+
+        <!--上传图片-->
+        <activity
+            android:name=".activity.exam.UpdatePictureActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--教学视屏-->
+        <activity
+            android:name=".activity.exam.TeachingVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+
+        <!--图文教程-->
+        <activity
+            android:name=".activity.exam.TuWenActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--考试记录-->
+        <activity
+            android:name=".activity.exam.TestRecordsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--我的成绩-->
+        <activity
+            android:name=".activity.exam.MyGradeActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--参加考试 直接进入试题 -->
+        <activity
+            android:name=".activity.exam.QuestionsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--完成考试 -->
+        <activity
+            android:name=".activity.exam.ExamSuccessActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--参加考试-->
+        <activity
+            android:name=".activity.exam.JoinTestActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--员工信息-->
+        <activity
+            android:name=".activity.persion.PersonalDetailsActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--培训内容-->
+        <activity
+            android:name=".activity.persion.ProjectExperienceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="nosensor" />
+
+        <!--员工信息，提交部分-->
+        <activity
+            android:name=".activity.persion.EmployeeInformationActivity"
+            android:screenOrientation="nosensor" />
+
+        <!--buggly-->
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="2151ac5b84" />
+        <!-- 配置APP版本号 -->
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="1.0.1" />
+        <!-- 配置APP渠道号 -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="8" />
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="true" />
+
+        <!--u-meng-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="unspecified"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#2394E9</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="btn_bule">#3ab3ff</color>
+    <color name="nine_text">#999999</color>
+    <color name="eight_text">#888888</color>
+    <color name="tab_focuse">#4ABBFC</color>
+    <color name="light_blue">#b8e1fb</color>
+    <color name="three">#333333</color>
+    <color name="line_b5">#BFBFBF</color>
+    <color name="sixe">#eeeeee</color>
+    <color name="f_seven">#F7F7F7</color>
+    <color name="f_nine">#F9F9F9</color>
+    <color name="f_db">#dbdbdb</color>
+    <color name="f_ba">#FBFAFA</color>
+    <color name="six">#666666</color>
+    <color name="red">#ffec1f1f</color>
+    <color name="bg_dc">#F2F4F5</color>
+    <color name="tv_blue">#0E92DF</color>
+    <color name="light_green">#F5FAFD</color>
+    <color name="item_bg_grey">#FCF9FC</color>
+    <color name="text_hui">#FDFAFE</color>
+    <color name="bg_hui">#F8F8FA</color>
+    <color name="text_green">#1EC75A</color>
+    <color name="text_seven">#777777</color>
+    <color name="f_six">#F6F6F6</color>
+    <color name="qian_blue">#F4FBFF</color>
+
+    <color name="touming">#00000000</color>
+
+    <!--条形统计图-->
+    <color name="chart_color1">#8FC8F8</color>
+    <color name="chart_color2">#4BA2EC</color>
+    <color name="chart_color3">#1674C4</color>
+</resources>

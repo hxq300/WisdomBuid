@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_line"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/btn_bule"
+        android:paddingTop="36dp">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:onClick="back"
+            android:padding="10dp"
+            android:src="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/text_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="进度管理"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/process_spopu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/ten"
+            android:gravity="center"
+            android:onClick="showPopu"
+            android:paddingRight="@dimen/ten"
+            android:src="@mipmap/more_icon"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/bg_dc"
+        android:gravity="center"
+        android:text="苏州S1线土建05标"
+        android:textColor="@color/tv_blue"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginTop="@dimen/twelve"
+        android:layout_marginRight="@dimen/ten"
+        android:background="@drawable/pay_bg_hui"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/twelve"
+        android:paddingTop="@dimen/seven"
+        android:paddingRight="@dimen/twelve"
+        android:paddingBottom="@dimen/ten">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/thirty"
+            android:gravity="center"
+            android:text="当日进度"
+            android:textColor="#ff3d91d0"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thirty"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="成孔50m"
+                android:textColor="@color/three"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thirty"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="桩基检测2个"
+                android:textColor="@color/three"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thirty"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="钢筋制安50m"
+                android:textColor="@color/three"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thirty"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="灌浇量2个"
+                android:textColor="@color/three"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

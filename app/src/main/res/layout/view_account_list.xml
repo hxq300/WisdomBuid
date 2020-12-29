@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/ten"
+    android:gravity="center_vertical"
+    android:background="@color/f_ba"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/seven"
+    android:paddingBottom="@dimen/seven">
+
+    <ImageView
+        android:layout_width="@dimen/line_height"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginLeft="@dimen/twelve"
+        android:src="@mipmap/mine_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twelve"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="风花雪月"
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/adp_account_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19836542019"
+            android:textColor="@color/three"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/adp_account_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/check_icon" />
+
+</LinearLayout>

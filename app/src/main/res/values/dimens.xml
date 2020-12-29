@@ -1,0 +1,16 @@
+<resources>
+
+    <dimen name="margin">16dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="four">4dp</dimen>
+    <dimen name="seven">7dp</dimen>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="nine">9dp</dimen>
+    <dimen name="twelve">12dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="line_height">45dp</dimen>
+    <dimen name="btn_circular">21dp</dimen>
+    <dimen name="thirty">30dp</dimen>
+
+
+</resources>

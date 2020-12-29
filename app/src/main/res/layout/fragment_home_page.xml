@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.youth.banner.Banner
+            android:id="@+id/home_list_banner"
+            android:layout_width="match_parent"
+            android:layout_height="220dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/line_height"
+                    android:drawableRight="@mipmap/index_location"
+                    android:drawablePadding="@dimen/five"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/btn_circular"
+                    android:paddingRight="@dimen/seven"
+                    android:text="上海"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/home_line_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/seven"
+                    android:layout_marginLeft="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="1"
+                        android:src="@mipmap/seach_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten"
+                        android:alpha="1"
+                        android:text="请输入搜索关键词"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/index_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:onClick="indexBtn"
+                    android:paddingLeft="@dimen/ten"
+                    android:paddingRight="@dimen/btn_circular"
+                    android:src="@mipmap/scan_icon" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_rate_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <!--<com.wang.avi.AVLoadingIndicatorView-->
+        <!--android:id="@+id/avi"-->
+        <!--style="@style/AVLoadingIndicatorView.Large"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--app:indicatorColor="@color/huang"-->
+        <!--app:indicatorName="BallSpinFadeLoaderIndicator" />-->
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginRight="@dimen/margin"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/home_renyuanguanli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_renyuanguanli"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:onClick="homeClick"
+            android:padding="@dimen/twelve"
+            android:text="@string/personnel_management"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/home_anquanguanlixitong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_anquanguanli"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:onClick="homeClick"
+            android:padding="@dimen/twelve"
+            android:text="@string/safety_management"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_zhiliangguanli"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/quality_control"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_wuliaojiancce"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/material_monitoring"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_jindu"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/schedule_management"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/home_peixunkaohe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_peixun"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:onClick="homeClick"
+            android:padding="@dimen/twelve"
+            android:text="@string/training_and_check"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_jiankong"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/ai_monitoring"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/index_jifen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/main_jifen"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:onClick="indexBtn"
+            android:padding="@dimen/twelve"
+            android:text="@string/credits_exchange"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

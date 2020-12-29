@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f_nine"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_margin="@dimen/ten"
+        android:src="@mipmap/total_image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/white"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/ten"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/total_shop"
+            android:onClick="total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/total_gift"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/shop_integral"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/total_my"
+            android:onClick="total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/total_icon"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/my_integral"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/total_record"
+            android:onClick="total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/total_order"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/for_record"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/total_pay"
+            android:drawablePadding="@dimen/seven"
+            android:gravity="center"
+            android:padding="@dimen/twelve"
+            android:text="@string/buy_points"
+            android:textColor="@color/six"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_shop"
+            android:paddingBottom="@dimen/ten"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

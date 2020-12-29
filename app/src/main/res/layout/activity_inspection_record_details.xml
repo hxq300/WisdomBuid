@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_section_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/bg_dc"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/tv_blue"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twelve">
+
+        <TextView
+            android:id="@+id/redetails_shangbaoren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/redetails_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/redetails_zhandian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/redetails_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twelve"
+        android:layout_marginRight="@dimen/twelve"
+        android:background="@drawable/line_blue"
+        android:padding="@dimen/ten"
+        android:text=""
+        android:textColor="@color/six"
+        android:textSize="12sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_zhenggaitongzhidan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twelve"
+            android:layout_marginRight="@dimen/twelve">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/redetails_zerenren"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:layout_marginLeft="@dimen/twelve"
+        android:layout_marginTop="@dimen/seven"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/three"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/redetails_units"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:layout_marginLeft="@dimen/twelve"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/three"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/line_jifen"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:layout_marginLeft="@dimen/twelve"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="给予积分： "
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/redetails_jifen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="可适当给予一定积分"
+            android:inputType="number"
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="审核结果："
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/redetails_wuxiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无效"
+            android:textColor="@color/red"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/redetails_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtn_hege"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@drawable/checkbox_frame_red"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/five"
+                android:text="@string/effectivity"
+                android:textColor="@color/text_green"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_buhege"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/btn_circular"
+                android:button="@drawable/checkbox_frame_red"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/five"
+                android:text="@string/invalid"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/redetails_commit"
+        android:layout_width="118dp"
+        android:layout_height="@dimen/line_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/btn_circular"
+        android:background="@drawable/input_bg_blue"
+        android:onClick="recordCommit"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

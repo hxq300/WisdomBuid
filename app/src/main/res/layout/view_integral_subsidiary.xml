@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_circular"
+        android:layout_marginRight="45dp">
+
+        <TextView
+            android:id="@+id/item_type_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nine"
+            android:text="安全问题上报"
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_type_name"
+            android:paddingTop="@dimen/seven"
+            android:paddingBottom="@dimen/seven"
+            android:text="2020-3-21   18:20"
+            android:textColor="@color/three"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_add_jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="+50"
+            android:textColor="@color/btn_bule"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <TextView style="@style/fenge" />
+
+</LinearLayout>

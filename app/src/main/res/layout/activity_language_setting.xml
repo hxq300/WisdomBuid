@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/language_simple"
+        android:onClick="switchLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/simplified_chinese"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/language_traditional"
+        android:onClick="switchLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/chinese_traditional"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/language_english"
+        android:onClick="switchLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/american_english"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/language_default"
+        android:onClick="switchLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/system_default"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+</LinearLayout>

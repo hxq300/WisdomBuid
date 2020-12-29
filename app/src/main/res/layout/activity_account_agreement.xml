@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:onClick="reLogin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ten"
+        android:gravity="center_vertical"
+        android:background="@color/f_ba"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/seven"
+        android:paddingBottom="@dimen/seven">
+
+        <ImageView
+            android:id="@+id/account_head_img"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="@dimen/twelve"
+            android:src="@mipmap/mine_head" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twelve"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="风花雪月"
+                android:textColor="@color/three"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/account_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19836542019"
+                android:textColor="@color/three"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="@dimen/ten"
+            android:layout_height="wrap_content"
+            android:text="当前账号"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/adp_account_check"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:src="@mipmap/check_icon" />-->
+
+    </LinearLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/twelve">-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recycler_account"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+<!--    </RelativeLayout>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:visibility="gone"
+        android:background="@color/f_ba"
+        android:drawableLeft="@mipmap/add_account"
+        android:drawablePadding="@dimen/twelve"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/twelve"
+        android:text="@string/add_or_register"
+        android:textColor="@color/btn_bule"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/ten"
+        android:background="@color/f_ba"
+        android:drawableRight="@mipmap/black_into"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/btn_circular"
+        android:onClick="updatePass"
+        android:paddingRight="@dimen/btn_circular"
+        android:text="@string/change_password"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <Button
+        android:onClick="appExist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/line_height"
+        android:background="@color/f_nine"
+        android:text="@string/safe_withdrawing"
+        android:textColor="@color/btn_bule"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

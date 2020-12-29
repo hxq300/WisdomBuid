@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/margin">
+
+    <LinearLayout
+        android:id="@+id/line_top"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/record_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/ten">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/record_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:text="宝宝幼儿童80抽5包大包装"
+                android:textColor="@color/three"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/record_dialog_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five"
+                android:text="兑换日期：2020-03-23"
+                android:textColor="@color/six"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/record_dialog_goods_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/ten"
+            android:src="@mipmap/good4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_top"
+        android:layout_marginTop="1dp"
+        android:background="@mipmap/record_bottom"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin">
+
+        <ImageView
+            android:id="@+id/record_dialog_zxing"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/good4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="@dimen/ten"
+            android:gravity="center"
+            android:text="此商品已兑换成功，如未取货，\n请尽快前往超市兑换！"
+            android:textColor="@color/six"
+            android:textSize="11sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

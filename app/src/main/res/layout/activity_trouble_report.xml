@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginRight="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/five"
+            android:padding="@dimen/four"
+            android:text="标题："
+            android:textColor="@color/six"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginRight="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/five"
+            android:padding="@dimen/four"
+            android:text="工点："
+            android:textColor="@color/six"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:src="@mipmap/xiala_icon" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginRight="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/five"
+            android:padding="@dimen/four"
+            android:text="隐患类型："
+            android:textColor="@color/six"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:src="@mipmap/xiala_icon" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_circular"
+        android:layout_marginTop="@dimen/ten"
+        android:padding="@dimen/four"
+        android:text="隐患内容："
+        android:textColor="@color/six"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_circular"
+        android:layout_marginTop="@dimen/five"
+        android:layout_marginRight="@dimen/btn_circular"
+        android:background="@drawable/text_grey_line"
+        android:orientation="horizontal"
+        android:padding="@dimen/five">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:paddingLeft="@dimen/five"
+            android:paddingRight="@dimen/five"
+            android:src="@mipmap/edit_icon"
+            android:visibility="gone" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="请输入隐患内容……"
+            android:lineHeight="22dp"
+            android:minLines="5"
+            android:textColor="@color/six"
+            android:textColorHint="@color/nine_text"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_circular"
+        android:layout_marginTop="@dimen/ten"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/four"
+            android:text="拍照上传："
+            android:textColor="@color/six"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(可上传8张图片)"
+            android:textColor="@color/nine_text"
+            android:textSize="9sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_foot_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/btn_circular"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/image_open_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/add_photo" />
+
+        <com.lsy.wisdombuid.widget.HorizontalListView
+            android:id="@+id/two_listphoto"
+            android:layout_width="wrap_content"
+            android:layout_height="95dp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="@dimen/line_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/line_height"
+        android:background="@drawable/input_bg_blue"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

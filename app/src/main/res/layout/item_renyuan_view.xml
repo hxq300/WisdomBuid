@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/five"
+    android:background="@color/bg_hui"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/reyuan_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@mipmap/people_renyuan" />
+
+    <TextView
+        android:id="@+id/renyuan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:drawableLeft="@mipmap/renyuan_icon"
+        android:drawablePadding="@dimen/five"
+        android:text="李勇浩"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+</LinearLayout>

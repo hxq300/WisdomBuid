@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.lsy.wisdombuid.widget.EasySeekBar
+            android:id="@+id/sub_people_seek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@color/light_blue"
+            android:padding="2dp"
+            app:circle_color="@color/colorPrimaryDark"
+            app:circle_r="0dp"
+            app:configuration="horizontal"
+            app:line="210dp"
+            app:max_progress="100"
+            app:min_progress="0"
+            app:progress_bg_color="@color/white"
+            app:progress_color="#CDCD00"
+            app:progress_with="40" />
+
+        <TextView
+            android:id="@+id/sub_people_number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/seven"
+            android:text="30人"
+            android:textColor="@color/three"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sub_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/five"
+        android:text="上海渊匠建筑工程有限公司"
+        android:textColor="@color/three"
+        android:textSize="12sp" />
+
+</LinearLayout>

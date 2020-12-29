@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/set_account_management"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="Setting"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/account_management"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/set_privacy_agreement"
+        android:onClick="Setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/set_language"
+        android:onClick="Setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/language_switch"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+
+
+</LinearLayout>

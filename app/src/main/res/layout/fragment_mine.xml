@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mine_top_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/mine_persion_data_line"
+            android:onClick="persionData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/head_img"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="21dp"
+                android:src="@mipmap/mine_head" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/ten"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mine_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="18824632510"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/mime_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="轮回少年"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="46dp"-->
+        <!--android:drawableLeft="@mipmap/mine_fatie"-->
+        <!--android:drawableRight="@mipmap/into_hui"-->
+        <!--android:drawablePadding="@dimen/margin_six"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="@dimen/margin"-->
+        <!--android:paddingRight="@dimen/margin"-->
+        <!--android:text="个人资料"-->
+        <!--android:textColor="@color/two"-->
+        <!--android:textSize="14sp" />-->
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/mine_persion_data"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_ziliao"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/personal_data"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/mine_my_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_xiaoxi"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/my_message"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/mine_clean_cache"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_clean"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/clear_cache"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/mine_system_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_setting"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/system_settings"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/mine_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_aboutus"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/about_us"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+    <TextView
+        android:id="@+id/mine_invite_friends"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/twelve"
+        android:drawableLeft="@mipmap/mine_yaoqing"
+        android:drawableRight="@mipmap/black_into"
+        android:drawablePadding="@dimen/ten"
+        android:gravity="center_vertical"
+        android:onClick="persionData"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:text="@string/invite_friends"
+        android:textColor="@color/three"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin" />
+
+
+</LinearLayout>

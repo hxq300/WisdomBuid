@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/message_shenhe_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/three"
+        android:textSize="11sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:background="@drawable/input_bg_grey"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/line_height"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/ten"
+            android:text="通知消息"
+            android:textColor="@color/three"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- 您于2020年1月23日上传的鹿城路站点隐患问题已经系统审核，感谢您的反馈！-->
+        <TextView
+            android:id="@+id/message_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/twelve"
+            android:lineHeight="22dp"
+            android:paddingLeft="@dimen/btn_circular"
+            android:paddingRight="@dimen/btn_circular"
+            android:text=""
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

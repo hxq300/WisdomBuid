@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/type_lable"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="13dp">
+
+    <ImageView
+        android:id="@+id/type_icon"
+        android:layout_width="@dimen/line_height"
+        android:layout_height="@dimen/line_height"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:src="@mipmap/main_renyuanguanli" />
+
+    <TextView
+        android:id="@+id/type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:singleLine="true"
+        android:text="家庭婚姻"
+        android:textColor="@color/six"
+        android:textSize="12sp" />
+
+
+</LinearLayout>
+
+

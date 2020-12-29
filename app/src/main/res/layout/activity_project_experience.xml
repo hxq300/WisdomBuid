@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginTop="@dimen/ten"
+                android:gravity="center_vertical"
+                android:text="项目详情"
+                android:textColor="@color/tab_focuse"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/per_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineHeight="25dp"
+                android:text="\t\t\t\t①材料和外观：采用镀锌方管组合焊接，模板和铝塑
+板双层包裹；气动遥控控制，配CI喷绘广告和企业
+LOGO展示；\n\t\t\t\t②尺寸：整体高4.45米，长5.4米，可根据客户需求
+定制；
+\n\t\t\t\t③功能：将安全带的正确的使用方法融合于实体体验
+活动中，让职工切实体验到无安全措施时高处坠落后
+人体片刻感受和精神压力，从而增强职工对于高处作
+业时必须正确佩戴安全带的自我保护意识，充分认识
+到高处作业无安全措施的危险性，杜绝项目施工中高
+处坠落事故的发生，做到安全文明施工。"
+                android:textColor="@color/three"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:id="@+id/per_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:background="@mipmap/line_bg"
+        android:onClick="toScan"
+        android:text="扫码识别"
+        android:textColor="@color/tab_focuse"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

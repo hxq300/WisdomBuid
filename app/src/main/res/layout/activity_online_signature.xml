@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lsy.wisdombuid.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/ten"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginTop="@dimen/five"
+                android:background="@drawable/signature_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/btn_circular">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="员工姓名："
+                    android:textColor="@color/six"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入"
+                    android:paddingLeft="@dimen/twelve"
+                    android:textColor="@color/three"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginTop="@dimen/five"
+                android:background="@drawable/signature_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/btn_circular">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身份证号："
+                    android:textColor="@color/six"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入"
+                    android:paddingLeft="@dimen/twelve"
+                    android:textColor="@color/three"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginTop="@dimen/five"
+                android:background="@drawable/signature_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/btn_circular">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="工         种："
+                    android:textColor="@color/six"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入"
+                    android:paddingLeft="@dimen/twelve"
+                    android:textColor="@color/three"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/signature_iamge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                android:background="@color/qian_blue"
+                android:orientation="vertical"
+                android:padding="@dimen/margin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/signature_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/line_height"
+                        android:gravity="center"
+                        android:padding="@dimen/ten"
+                        android:text="签名处（请正楷书写）"
+                        android:textColor="@color/six"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/signature_clean"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/line_height"
+                        android:layout_alignParentRight="true"
+                        android:drawableLeft="@mipmap/chachu"
+                        android:drawablePadding="@dimen/four"
+                        android:gravity="center"
+                        android:padding="@dimen/ten"
+                        android:text="擦除"
+                        android:textColor="@color/tab_focuse"
+                        android:textSize="11sp" />
+
+                    <com.lsy.wisdombuid.widget.SignatureView
+                        android:id="@+id/signature_pad"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/signature_area"
+                        android:layout_weight="1" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/ten"
+                    android:drawableLeft="@mipmap/zhuyi_icon"
+                    android:drawablePadding="@dimen/five"
+                    android:gravity="center"
+                    android:text="签名即代表同意以上内容。该签名仅为岗前三级安全教育用"
+                    android:textColor="@color/six"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/signature_commit"
+                android:layout_width="115dp"
+                android:layout_height="@dimen/line_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/input_bg_blue"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

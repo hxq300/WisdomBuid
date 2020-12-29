@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+            android:id="@+id/gsy_videoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_img_msg"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/btn_circular"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/line_height"
+            android:background="@mipmap/vedio_btn_pic"
+            android:gravity="center"
+            android:text="图文教程"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/video_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:layout_marginTop="@dimen/ten"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/ten"
+        android:text="施工安全常识了解—工人上岗基本要求"
+        android:textColor="@color/three"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ten"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程类别："
+            android:textColor="@color/text_seven"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/video_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预备课程"
+            android:textColor="@color/text_seven"
+            android:textSize="9sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:text="|"
+            android:textColor="@color/text_seven"
+            android:textSize="9sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时长："
+            android:textColor="@color/text_seven"
+            android:textSize="9sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24:23"
+            android:textColor="@color/text_seven"
+            android:textSize="9sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

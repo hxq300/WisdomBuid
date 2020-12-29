@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasySeekBar">
+        <attr name="configuration" format="string"/>
+        <attr name="progress_bg_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="circle_r" format="dimension"/>
+        <attr name="line" format="dimension"/>
+        <attr name="circle_color" format="color"/>
+        <attr name="max_progress" format="integer"/>
+        <attr name="min_progress" format="integer"/>
+        <attr name="progress_with" format="integer"/>
+    </declare-styleable>
+
+    -<declare-styleable name="CircleImageView">
+
+    <attr name="border_width" format="dimension"/>
+
+    <attr name="border_color" format="color"/>
+
+</declare-styleable>
+
+
+    -<declare-styleable name="PagerSlidingTabStrip">
+
+    <attr name="pstsIndicatorColor" format="color"/>
+
+    <attr name="pstsUnderlineColor" format="color"/>
+
+    <attr name="pstsDividerColor" format="color"/>
+
+    <attr name="pstsIndicatorHeight" format="dimension"/>
+
+    <attr name="pstsUnderlineHeight" format="dimension"/>
+
+    <attr name="pstsDividerPadding" format="dimension"/>
+
+    <attr name="pstsTabPaddingLeftRight" format="dimension"/>
+
+    <attr name="pstsScrollOffset" format="dimension"/>
+
+    <attr name="pstsTabBackground" format="reference"/>
+
+    <attr name="pstsShouldExpand" format="boolean"/>
+
+    <attr name="pstsTextAllCaps" format="boolean"/>
+
+</declare-styleable>
+
+
+    <declare-styleable name="SignatureView">
+
+    <attr name="minWidth" format="dimension"/>
+
+    <attr name="maxWidth" format="dimension"/>
+
+    <attr name="penColor" format="color"/>
+
+    <attr name="velocityFilterWeight" format="float"/>
+
+</declare-styleable>
+
+
+</resources>

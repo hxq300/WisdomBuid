@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/ten"
+    android:layout_marginTop="@dimen/ten"
+    android:layout_marginRight="@dimen/ten"
+    android:background="@drawable/item_cricle_grey"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/btn_circular"
+    android:paddingRight="@dimen/btn_circular">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改单位："
+            android:textColor="@color/six"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rect_danwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView style="@style/fenge" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改期限："
+            android:textColor="@color/six"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rect_plan_itme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView style="@style/fenge" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="检查人："
+            android:textColor="@color/six"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rect_ins_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView style="@style/fenge" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改项目："
+            android:textColor="@color/six"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rect_project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView style="@style/fenge" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="负责人："
+            android:textColor="@color/six"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rect_zeren_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/fenge"
+        android:layout_marginBottom="@dimen/ten" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/after_shangbao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoLink="all"
+            android:gravity="center"
+            android:padding="@dimen/seven"
+            android:text="整改上报"
+            android:textColor="@color/tv_blue"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/after_tongzhidna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/seven"
+            android:text="整改通知单"
+            android:textColor="@color/tv_blue"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

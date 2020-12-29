@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/ten">
+
+    <TextView
+        android:id="@+id/xingwei_remark"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:gravity="center_vertical"
+        android:text="上班期间没有佩戴安全帽，不注意工地安全"
+        android:textColor="@color/three"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/xingwei_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty"
+        android:gravity="center_vertical"
+        android:text="时间：2020-03-12 12:36:02"
+        android:textColor="@color/six"
+        android:textSize="11sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/line_xuxian" />
+
+</LinearLayout>
