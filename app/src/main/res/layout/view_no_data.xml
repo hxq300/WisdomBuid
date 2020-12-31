@@ -15,14 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="@dimen/dp_60"
             android:src="@mipmap/no_data_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/btn_circular"
+            android:layout_marginTop="@dimen/dp_21"
             android:text="暂无数据"
             android:textColor="@color/nine_text"
             android:textSize="15sp" />

@@ -13,14 +13,14 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="@dimen/dp_61"
         android:layout_height="wrap_content"
         android:src="@mipmap/login_success" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_16"
         android:text="秘密修改完了，快回去登录吧！"
         android:textColor="@color/six"
         android:textSize="10sp" />

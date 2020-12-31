@@ -4,5 +4,5 @@
 
     <solid android:color="@color/f_seven" />
     <!--type的值有三种：linear-线性；radial-径向；sweep-3D效果。-->
-    <corners android:radius="@dimen/five" />
+    <corners android:radius="@dimen/dp_5" />
 </shape>

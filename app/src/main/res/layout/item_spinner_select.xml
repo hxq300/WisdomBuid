@@ -4,6 +4,6 @@
     android:text="这是下拉选项"
     android:gravity="center"
     android:background="@color/white"
-    android:layout_height="@dimen/line_height">
+    android:layout_height="@dimen/dp_45">
 
 </TextView>

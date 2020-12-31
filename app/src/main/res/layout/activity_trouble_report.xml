@@ -13,17 +13,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_16"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/five"
-            android:padding="@dimen/four"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:padding="@dimen/dp_4"
             android:text="标题："
             android:textColor="@color/six"
             android:textSize="16sp" />
@@ -37,23 +37,23 @@
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_16"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/five"
-            android:padding="@dimen/four"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:padding="@dimen/dp_4"
             android:text="工点："
             android:textColor="@color/six"
             android:textSize="16sp" />
@@ -67,31 +67,31 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/margin"
-            android:paddingRight="@dimen/margin"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
             android:src="@mipmap/xiala_icon" />
 
     </LinearLayout>
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/five"
-            android:padding="@dimen/four"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:padding="@dimen/dp_4"
             android:text="隐患类型："
             android:textColor="@color/six"
             android:textSize="16sp" />
@@ -105,23 +105,23 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/margin"
-            android:paddingRight="@dimen/margin"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
             android:src="@mipmap/xiala_icon" />
 
     </LinearLayout>
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/btn_circular"
-        android:layout_marginTop="@dimen/ten"
-        android:padding="@dimen/four"
+        android:layout_marginLeft="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="@dimen/dp_4"
         android:text="隐患内容："
         android:textColor="@color/six"
         android:textSize="16sp" />
@@ -129,18 +129,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/btn_circular"
-        android:layout_marginTop="@dimen/five"
-        android:layout_marginRight="@dimen/btn_circular"
+        android:layout_marginLeft="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_21"
         android:background="@drawable/text_grey_line"
         android:orientation="horizontal"
-        android:padding="@dimen/five">
+        android:padding="@dimen/dp_4">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:paddingLeft="@dimen/five"
-            android:paddingRight="@dimen/five"
+            android:layout_height="@dimen/dp_22"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
             android:src="@mipmap/edit_icon"
             android:visibility="gone" />
 
@@ -161,15 +161,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/btn_circular"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_marginLeft="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_10"
         android:gravity="bottom"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/four"
+            android:padding="@dimen/dp_4"
             android:text="拍照上传："
             android:textColor="@color/six"
             android:textSize="16sp" />
@@ -188,10 +188,10 @@
         android:id="@+id/ll_foot_picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginBottom="@dimen/dp_16"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/btn_circular"
+        android:paddingLeft="@dimen/dp_21"
         android:visibility="visible">
 
         <ImageView
@@ -203,16 +203,16 @@
         <com.lsy.wisdombuid.widget.HorizontalListView
             android:id="@+id/two_listphoto"
             android:layout_width="wrap_content"
-            android:layout_height="95dp" />
+            android:layout_height="@dimen/dp_95" />
 
     </LinearLayout>
 
 
     <Button
-        android:layout_width="115dp"
-        android:layout_height="@dimen/line_height"
+        android:layout_width="@dimen/dp_115"
+        android:layout_height="@dimen/dp_45"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/line_height"
+        android:layout_marginTop="@dimen/dp_45"
         android:background="@drawable/input_bg_blue"
         android:text="提交"
         android:textColor="@color/white"

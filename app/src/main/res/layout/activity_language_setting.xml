@@ -14,73 +14,73 @@
         android:id="@+id/language_simple"
         android:onClick="switchLanguage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="@dimen/twelve"
-        android:drawablePadding="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_12"
+        android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:paddingLeft="21dp"
-        android:paddingRight="21dp"
+        android:paddingLeft="@dimen/dp_21"
+        android:paddingRight="@dimen/dp_21"
         android:text="@string/simplified_chinese"
         android:textColor="@color/three"
         android:textSize="15sp" />
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <TextView
         android:id="@+id/language_traditional"
         android:onClick="switchLanguage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:drawablePadding="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:paddingLeft="21dp"
-        android:paddingRight="21dp"
+        android:paddingLeft="@dimen/dp_21"
+        android:paddingRight="@dimen/dp_21"
         android:text="@string/chinese_traditional"
         android:textColor="@color/three"
         android:textSize="15sp" />
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <TextView
         android:id="@+id/language_english"
         android:onClick="switchLanguage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:drawablePadding="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:paddingLeft="21dp"
-        android:paddingRight="21dp"
+        android:paddingLeft="@dimen/dp_21"
+        android:paddingRight="@dimen/dp_21"
         android:text="@string/american_english"
         android:textColor="@color/three"
         android:textSize="15sp" />
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
     <TextView
         android:id="@+id/language_default"
         android:onClick="switchLanguage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:drawablePadding="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:paddingLeft="21dp"
-        android:paddingRight="21dp"
+        android:paddingLeft="@dimen/dp_21"
+        android:paddingRight="@dimen/dp_21"
         android:text="@string/system_default"
         android:textColor="@color/three"
         android:textSize="15sp" />
 
     <TextView
         style="@style/fenge"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin" />
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16" />
 
 </LinearLayout>

@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="@dimen/ten">
+    android:padding="@dimen/dp_10">
 
     <TextView
         android:id="@+id/xingwei_remark"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
+        android:layout_height="@dimen/dp_30"
         android:gravity="center_vertical"
         android:text="上班期间没有佩戴安全帽，不注意工地安全"
         android:textColor="@color/three"
@@ -17,7 +17,7 @@
     <TextView
         android:id="@+id/xingwei_time"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
+        android:layout_height="@dimen/dp_30"
         android:gravity="center_vertical"
         android:text="时间：2020-03-12 12:36:02"
         android:textColor="@color/six"

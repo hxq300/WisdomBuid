@@ -14,17 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:layout_margin="@dimen/ten"
+        android:layout_margin="@dimen/dp_10"
         android:src="@mipmap/total_image" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/white"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/ten"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_10"
         android:orientation="horizontal">
 
         <TextView
@@ -34,9 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/total_gift"
-            android:drawablePadding="@dimen/seven"
+            android:drawablePadding="@dimen/dp_7"
             android:gravity="center"
-            android:padding="@dimen/twelve"
+            android:padding="@dimen/dp_12"
             android:text="@string/shop_integral"
             android:textColor="@color/six"
             android:textSize="12sp" />
@@ -49,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/total_icon"
-            android:drawablePadding="@dimen/seven"
+            android:drawablePadding="@dimen/dp_7"
             android:gravity="center"
-            android:padding="@dimen/twelve"
+            android:padding="@dimen/dp_12"
             android:text="@string/my_integral"
             android:textColor="@color/six"
             android:textSize="12sp" />
@@ -64,9 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/total_order"
-            android:drawablePadding="@dimen/seven"
+            android:drawablePadding="@dimen/dp_7"
             android:gravity="center"
-            android:padding="@dimen/twelve"
+            android:padding="@dimen/dp_12"
             android:text="@string/for_record"
             android:textColor="@color/six"
             android:textSize="12sp" />
@@ -78,9 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/total_pay"
-            android:drawablePadding="@dimen/seven"
+            android:drawablePadding="@dimen/dp_7"
             android:gravity="center"
-            android:padding="@dimen/twelve"
+            android:padding="@dimen/dp_12"
             android:text="@string/buy_points"
             android:textColor="@color/six"
             android:textSize="12sp" />
@@ -91,12 +91,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_shop"
-            android:paddingBottom="@dimen/ten"
+            android:paddingBottom="@dimen/dp_10"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

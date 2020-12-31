@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="@dimen/dp_10"
     android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/zong_line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/f_nine"
         android:orientation="horizontal">
 
@@ -17,7 +17,7 @@
             android:id="@+id/help_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginLeft="@dimen/dp_16"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="帮助条目"
@@ -28,7 +28,7 @@
             android:id="@+id/image_fangxiang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin"
+            android:padding="@dimen/dp_16"
             android:src="@mipmap/black_into" />
 
     </LinearLayout>

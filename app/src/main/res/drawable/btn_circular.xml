@@ -4,8 +4,8 @@
 
     <solid android:color="#ff3ab3ff" />
     <corners
-        android:bottomLeftRadius="@dimen/btn_circular"
-        android:bottomRightRadius="@dimen/btn_circular"
-        android:topLeftRadius="@dimen/btn_circular"
-        android:topRightRadius="@dimen/btn_circular" />
+        android:bottomLeftRadius="@dimen/dp_21"
+        android:bottomRightRadius="@dimen/dp_21"
+        android:topLeftRadius="@dimen/dp_21"
+        android:topRightRadius="@dimen/dp_21" />
 </shape>

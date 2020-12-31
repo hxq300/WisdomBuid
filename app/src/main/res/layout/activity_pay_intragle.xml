@@ -20,9 +20,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/margin"
+        android:paddingLeft="@dimen/dp_16"
         android:text="选择充值金额"
         android:textColor="@color/three"
         android:textSize="15sp" />
@@ -30,9 +30,9 @@
     <RelativeLayout
         android:id="@+id/pay_money_one"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/pay_bg_blue"
         android:onClick="payMoney">
 
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/btn_circular"
+            android:layout_marginLeft="@dimen/dp_21"
             android:text="100积分"
             android:textColor="@color/three"
             android:textSize="18sp" />
@@ -50,8 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/twelve"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_12"
             android:text="特惠价￥8元"
             android:textColor="@color/red"
             android:textSize="12sp" />
@@ -62,8 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/pay_special_price"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_16"
             android:text="￥10元"
             android:textColor="@color/three"
             android:textSize="10sp" />
@@ -74,10 +74,10 @@
     <RelativeLayout
         android:id="@+id/pay_money_two"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/pay_bg_hui"
         android:onClick="payMoney">
 
@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/btn_circular"
+            android:layout_marginLeft="@dimen/dp_21"
             android:text="200积分"
             android:textColor="@color/three"
             android:textSize="18sp" />
@@ -95,8 +95,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/twelve"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_12"
             android:text="特惠价￥16元"
             android:textColor="@color/red"
             android:textSize="12sp" />
@@ -107,8 +107,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/pay_special_price2"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_16"
             android:text="￥20元"
             android:textColor="@color/three"
             android:textSize="10sp" />
@@ -119,10 +119,10 @@
     <RelativeLayout
         android:id="@+id/pay_money_three"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/pay_bg_hui"
         android:onClick="payMoney">
 
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/btn_circular"
+            android:layout_marginLeft="@dimen/dp_21"
             android:text="300积分"
             android:textColor="@color/three"
             android:textSize="18sp" />
@@ -140,8 +140,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/twelve"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_12"
             android:text="特惠价￥26元"
             android:textColor="@color/red"
             android:textSize="12sp" />
@@ -152,8 +152,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/pay_special_price3"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/five"
-            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_16"
             android:text="￥30元"
             android:textColor="@color/three"
             android:textSize="10sp" />
@@ -164,9 +164,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/margin"
+        android:paddingLeft="@dimen/dp_16"
         android:text="选择充值方式"
         android:textColor="@color/three"
         android:textSize="15sp" />
@@ -175,21 +175,21 @@
         android:id="@+id/pay_type1"
         android:onClick="payType"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/pay_bg_hui"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="@dimen/ten"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_10"
             android:src="@mipmap/weixin_icon" />
 
         <TextView
-            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -199,9 +199,9 @@
 
         <CheckBox
             android:id="@+id/check_type_weixin"
-            android:layout_width="20dp"
+            android:layout_width="@dimen/dp_20"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/ten"
+            android:layout_marginRight="@dimen/dp_10"
             android:background="@drawable/checkbox_red"
             android:button="@null"
             android:checked="false"
@@ -215,22 +215,22 @@
         android:id="@+id/pay_type2"
         android:onClick="payType"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/ten"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/pay_bg_hui"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="@dimen/ten"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_10"
             android:src="@mipmap/alipay_icon" />
 
         <TextView
-            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -240,9 +240,9 @@
 
         <CheckBox
             android:id="@+id/check_type_alipay"
-            android:layout_marginRight="@dimen/ten"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:background="@drawable/checkbox_red"
             android:button="@null"
             android:checked="false"

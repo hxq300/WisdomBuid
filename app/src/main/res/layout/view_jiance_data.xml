@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="@dimen/dp_70"
     android:gravity="center_vertical"
-    android:paddingLeft="@dimen/twelve"
+    android:paddingLeft="@dimen/dp_12"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/jiance_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="@dimen/five"
+        android:paddingRight="@dimen/dp_5"
         android:src="@mipmap/fenshu" />
 
     <LinearLayout
@@ -31,7 +31,7 @@
             android:id="@+id/jiance_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/five"
+            android:layout_marginTop="@dimen/dp_5"
             android:text="湿度"
             android:textColor="@color/six"
             android:textSize="10sp" />

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/tv_take_photo"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         android:text="拍摄"
         android:gravity="center"
         android:textSize="16sp"
@@ -23,7 +23,7 @@
     <TextView
         android:id="@+id/tv_take_pic"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         android:text="从手机相册选择"
         android:gravity="center"
         android:textSize="16sp"
@@ -31,13 +31,13 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/dp_5"
         android:background="@color/f_nine"/>
 
     <TextView
         android:id="@+id/tv_cancel"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/dp_60"
         android:text="取消"
         android:gravity="center"
         android:textSize="16sp"

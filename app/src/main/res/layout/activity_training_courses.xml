@@ -13,16 +13,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_training_courses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
-            android:paddingTop="@dimen/ten"
-            android:paddingBottom="@dimen/thirty">
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_30">
 
         </androidx.recyclerview.widget.RecyclerView>
 

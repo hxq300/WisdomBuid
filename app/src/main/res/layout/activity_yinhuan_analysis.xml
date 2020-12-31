@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/tv_section_name"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/bg_dc"
         android:gravity="center"
         android:text=""
@@ -25,14 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
-        android:layout_marginTop="@dimen/seven"
+        android:layout_marginTop="@dimen/dp_7"
         android:background="@drawable/line_blue"
         android:orientation="horizontal">
 
         <Spinner
             android:id="@+id/mspinner"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/thirty"
+            android:layout_height="@dimen/dp_30"
             android:gravity="center"
             android:overlapAnchor="false"
             android:spinnerMode="dropdown"
@@ -42,9 +42,9 @@
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="@dimen/margin"
-        android:padding="@dimen/ten" />
+        android:layout_height="@dimen/dp_300"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_10" />
 
 
 </LinearLayout>

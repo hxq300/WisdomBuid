@@ -8,17 +8,17 @@
     <RelativeLayout
         android:id="@+id/title_line"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/dp_72"
         android:background="@color/btn_bule"
-        android:paddingTop="36dp">
+        android:paddingTop="@dimen/dp_36">
 
         <ImageView
             android:onClick="back"
-            android:layout_width="31dp"
+            android:layout_width="@dimen/dp_31"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="6dp"
-            android:padding="10dp"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:padding="@dimen/dp_10"
             android:src="@mipmap/back_icon" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="@dimen/dp_16"
             android:gravity="center"
             android:text="已上传"
             android:textColor="@color/white"
@@ -47,12 +47,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/f_nine"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/ten">
+        android:paddingLeft="@dimen/dp_10">
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,27 +74,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/f_nine">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_add_picture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ten"
-            android:layout_marginRight="@dimen/ten">
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
 
         </androidx.recyclerview.widget.RecyclerView>
 
 
         <Button
             android:layout_width="115dp"
-            android:layout_height="@dimen/thirty"
+            android:layout_height="@dimen/dp_30"
             android:layout_below="@id/recycler_add_picture"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/line_height"
-            android:layout_marginBottom="@dimen/btn_circular"
+            android:layout_marginTop="@dimen/dp_45"
+            android:layout_marginBottom="@dimen/dp_45"
             android:background="@drawable/input_bg_blue"
             android:text="提交"
             android:textColor="@color/white"

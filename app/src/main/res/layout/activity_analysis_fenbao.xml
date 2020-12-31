@@ -13,7 +13,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/bg_dc"
         android:gravity="center"
         android:text="苏州S1线土建05标"
@@ -23,9 +23,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:padding="@dimen/margin">
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:padding="@dimen/dp_16">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_sub_contractor"

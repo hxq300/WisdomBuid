@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/ten"
+    android:layout_marginTop="@dimen/dp_10"
     android:background="@color/text_hui"
     android:gravity="center_vertical"
     android:orientation="horizontal">
@@ -10,11 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/btn_circular"
+        android:layout_marginLeft="@dimen/dp_21"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:paddingTop="@dimen/seven"
-        android:paddingBottom="@dimen/seven">
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7">
 
         <TextView
             android:id="@+id/in_record_title"
@@ -28,7 +28,7 @@
             android:id="@+id/in_record_up_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/seven"
+            android:layout_marginTop="@dimen/dp_7"
             android:text=""
             android:textColor="@color/three"
             android:textSize="11sp" />
@@ -37,7 +37,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin"
+        android:padding="@dimen/dp_16"
         android:src="@mipmap/black_into" />
 
 

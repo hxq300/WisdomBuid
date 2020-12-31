@@ -12,27 +12,27 @@
 
     <LinearLayout
         android:onClick="reLogin"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/ten"
+        android:layout_marginBottom="@dimen/dp_10"
         android:gravity="center_vertical"
         android:background="@color/f_ba"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/seven"
-        android:paddingBottom="@dimen/seven">
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7">
 
         <ImageView
             android:id="@+id/account_head_img"
-            android:layout_width="@dimen/line_height"
-            android:layout_height="@dimen/line_height"
-            android:layout_marginLeft="@dimen/twelve"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_12"
             android:src="@mipmap/mine_head" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/twelve"
+            android:layout_marginLeft="@dimen/dp_12"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -56,7 +56,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:padding="@dimen/ten"
+            android:padding="@dimen/dp_10"
             android:layout_height="wrap_content"
             android:text="当前账号"/>
 
@@ -85,27 +85,27 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:visibility="gone"
         android:background="@color/f_ba"
         android:drawableLeft="@mipmap/add_account"
-        android:drawablePadding="@dimen/twelve"
+        android:drawablePadding="@dimen/dp_12"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/twelve"
+        android:paddingLeft="@dimen/dp_12"
         android:text="@string/add_or_register"
         android:textColor="@color/btn_bule"
         android:textSize="15sp" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/f_ba"
         android:drawableRight="@mipmap/black_into"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/btn_circular"
+        android:paddingLeft="@dimen/dp_21"
         android:onClick="updatePass"
-        android:paddingRight="@dimen/btn_circular"
+        android:paddingRight="@dimen/dp_21"
         android:text="@string/change_password"
         android:textColor="@color/three"
         android:textSize="15sp" />
@@ -113,8 +113,8 @@
     <Button
         android:onClick="appExist"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_45"
         android:background="@color/f_nine"
         android:text="@string/safe_withdrawing"
         android:textColor="@color/btn_bule"

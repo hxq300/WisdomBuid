@@ -7,8 +7,8 @@
     <ImageView
         android:id="@+id/rectification_list_photo"
         android:layout_width="match_parent"
-        android:layout_height="118dp"
-        android:layout_margin="@dimen/five"
+        android:layout_height="@dimen/dp_118"
+        android:layout_margin="@dimen/dp_5"
         android:background="@color/white"
         android:scaleType="center"
         android:src="@mipmap/rect_icon1" />

@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/tv_section_name"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/bg_dc"
         android:gravity="center"
         android:text=""
@@ -23,7 +23,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/twelve">
+        android:padding="@dimen/dp_12">
 
         <TextView
             android:id="@+id/redetails_shangbaoren"
@@ -57,10 +57,10 @@
         android:id="@+id/redetails_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/twelve"
-        android:layout_marginRight="@dimen/twelve"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
         android:background="@drawable/line_blue"
-        android:padding="@dimen/ten"
+        android:padding="@dimen/dp_10"
         android:text=""
         android:textColor="@color/six"
         android:textSize="12sp" />
@@ -69,14 +69,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ten">
+        android:layout_marginTop="@dimen/dp_10">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_zhenggaitongzhidan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/twelve"
-            android:layout_marginRight="@dimen/twelve">
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -86,9 +86,9 @@
     <TextView
         android:id="@+id/redetails_zerenren"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
-        android:layout_marginLeft="@dimen/twelve"
-        android:layout_marginTop="@dimen/seven"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_7"
         android:gravity="center_vertical"
         android:text=""
         android:textColor="@color/three"
@@ -97,8 +97,8 @@
     <TextView
         android:id="@+id/redetails_units"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
-        android:layout_marginLeft="@dimen/twelve"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_12"
         android:gravity="center_vertical"
         android:text=""
         android:textColor="@color/three"
@@ -107,8 +107,8 @@
     <LinearLayout
         android:id="@+id/line_jifen"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
-        android:layout_marginLeft="@dimen/twelve"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_12"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -133,10 +133,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty"
+        android:layout_height="@dimen/dp_30"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/ten">
+        android:paddingLeft="@dimen/dp_10">
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
                 android:button="@drawable/checkbox_frame_red"
                 android:checked="true"
                 android:gravity="center"
-                android:paddingHorizontal="@dimen/five"
+                android:paddingHorizontal="@dimen/dp_5"
                 android:text="@string/effectivity"
                 android:textColor="@color/text_green"
                 android:textSize="12sp" />
@@ -177,10 +177,10 @@
                 android:id="@+id/rbtn_buhege"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/btn_circular"
+                android:layout_marginLeft="@dimen/dp_21"
                 android:button="@drawable/checkbox_frame_red"
                 android:gravity="center"
-                android:paddingHorizontal="@dimen/five"
+                android:paddingHorizontal="@dimen/dp_5"
                 android:text="@string/invalid"
                 android:textColor="@color/red"
                 android:textSize="12sp" />
@@ -193,10 +193,10 @@
 
     <Button
         android:id="@+id/redetails_commit"
-        android:layout_width="118dp"
-        android:layout_height="@dimen/line_height"
+        android:layout_width="@dimen/dp_118"
+        android:layout_height="@dimen/dp_45"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/btn_circular"
+        android:layout_marginTop="@dimen/dp_21"
         android:background="@drawable/input_bg_blue"
         android:onClick="recordCommit"
         android:text="提交"

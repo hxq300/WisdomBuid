@@ -6,8 +6,8 @@
         android:id="@+id/zxing_barcode_surface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:zxing_framing_rect_height="50dp"
-        app:zxing_framing_rect_width="250dp" />
+        app:zxing_framing_rect_height="@dimen/dp_50"
+        app:zxing_framing_rect_width="@dimen/dp_250" />
 
     <com.lsy.wisdombuid.qr.QrView
         android:id="@+id/zxing_viewfinder_view"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="@dimen/dp_30"
         android:background="@color/zxing_transparent"
         android:text="请将二维码置于取景框内扫描"
         android:textColor="@color/zxing_status_text" />

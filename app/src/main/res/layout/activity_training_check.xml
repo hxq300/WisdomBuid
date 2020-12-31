@@ -15,7 +15,7 @@
         android:id="@+id/line_exam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/btn_bule"
         android:backgroundTint="@color/btn_bule"
         android:orientation="vertical">
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="@dimen/seven"
+            android:padding="@dimen/dp_7"
             android:text="最新考试"
             android:textColor="@color/three"
             android:textSize="15sp"
@@ -35,8 +35,8 @@
             android:id="@+id/training_notes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/btn_circular"
-            android:lineHeight="22dp"
+            android:layout_marginLeft="@dimen/dp_21"
+            android:lineHeight="@dimen/dp_22"
             android:text=""
             android:textColor="@color/three"
             android:textSize="13sp" />
@@ -44,15 +44,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ten"
+            android:layout_marginTop="@dimen/dp_10"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/training_pager_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/btn_circular"
-                android:lineHeight="22dp"
+                android:layout_marginLeft="@dimen/dp_21"
+                android:lineHeight="@dimen/dp_22"
                 android:text=""
                 android:textColor="@color/three"
                 android:textSize="13sp" />
@@ -63,8 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/training_pager_name"
-                android:layout_marginLeft="@dimen/btn_circular"
-                android:layout_marginTop="@dimen/ten"
+                android:layout_marginLeft="@dimen/dp_21"
+                android:layout_marginTop="@dimen/dp_10"
                 android:orientation="horizontal">
 
                 <TextView
@@ -101,9 +101,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/line_fenshu"
-                android:layout_marginLeft="@dimen/btn_circular"
-                android:layout_marginTop="@dimen/ten"
-                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginLeft="@dimen/dp_21"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="horizontal">
 
                 <TextView
@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@mipmap/peixun_rili"
-                    android:drawablePadding="@dimen/five"
+                    android:drawablePadding="@dimen/dp_5"
                     android:text="2020.3.12 15:23"
                     android:textColor="@color/six"
                     android:textSize="10sp" />
@@ -120,9 +120,9 @@
                     android:id="@+id/training_test_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin"
+                    android:layout_marginLeft="@dimen/dp_16"
                     android:drawableLeft="@mipmap/peixun_shihzong"
-                    android:drawablePadding="@dimen/five"
+                    android:drawablePadding="@dimen/dp_5"
                     android:text=""
                     android:textColor="@color/six"
                     android:textSize="10sp" />
@@ -132,11 +132,11 @@
 
             <Button
                 android:id="@+id/test_test_now"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_30"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/margin"
-                android:layout_marginRight="@dimen/btn_circular"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_21"
                 android:background="@drawable/input_bg_blue"
                 android:onClick="testInto"
                 android:text="参加考试"
@@ -150,7 +150,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ten">
+        android:layout_marginTop="@dimen/dp_10">
 
         <ImageView
             android:layout_width="match_parent"
@@ -173,13 +173,13 @@
             <TextView
                 android:id="@+id/test_peixun_courses"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="@dimen/dp_108"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/peixun_kecheng"
                 android:gravity="center"
                 android:onClick="testInto"
-                android:paddingTop="@dimen/thirty"
-                android:paddingBottom="@dimen/margin"
+                android:paddingTop="@dimen/dp_30"
+                android:paddingBottom="@dimen/dp_30"
                 android:text="培训课程"
                 android:textColor="@color/three"
                 android:textSize="12sp" />
@@ -187,13 +187,13 @@
             <TextView
                 android:id="@+id/test_join_test"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="@dimen/dp_108"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/peixun_kaoshi"
                 android:gravity="center"
                 android:onClick="testInto"
-                android:paddingTop="@dimen/thirty"
-                android:paddingBottom="@dimen/margin"
+                android:paddingTop="@dimen/dp_30"
+                android:paddingBottom="@dimen/dp_16"
                 android:text="参加考试"
                 android:textColor="@color/three"
                 android:textSize="12sp" />
@@ -211,13 +211,13 @@
             <TextView
                 android:id="@+id/test_record"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="@dimen/dp_108"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/peixun_jilu"
                 android:gravity="center"
                 android:onClick="testInto"
-                android:paddingTop="@dimen/thirty"
-                android:paddingBottom="@dimen/margin"
+                android:paddingTop="@dimen/dp_30"
+                android:paddingBottom="@dimen/dp_16"
                 android:text="考试记录"
                 android:textColor="@color/three"
                 android:textSize="12sp" />
@@ -225,13 +225,13 @@
             <TextView
                 android:id="@+id/test_my_grade"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="@dimen/dp_108"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/peixun_chengji"
                 android:gravity="center"
                 android:onClick="testInto"
-                android:paddingTop="@dimen/thirty"
-                android:paddingBottom="@dimen/margin"
+                android:paddingTop="@dimen/dp_30"
+                android:paddingBottom="@dimen/dp_16"
                 android:text="我的成绩"
                 android:textColor="@color/three"
                 android:textSize="12sp" />
@@ -240,8 +240,8 @@
 
         <TextView
             android:id="@+id/test_update_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
             android:layout_centerInParent="true"
             android:gravity="center"
             android:onClick="testInto"

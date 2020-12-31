@@ -25,11 +25,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="34dp"
-                android:layout_marginRight="@dimen/margin"
-                android:lineHeight="22dp"
-                android:minHeight="22dp"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_34"
+                android:layout_marginRight="@dimen/dp_16"
+                android:lineHeight="@dimen/dp_22"
+                android:minHeight="@dimen/dp_22"
                 android:text="@string/user_agreement"
                 android:textColor="@color/three"
                 android:textSize="15sp" />
@@ -37,8 +37,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="@dimen/btn_circular"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_21"
                 android:text="@string/registration"
                 android:textColor="@color/three"
                 android:textSize="16sp" />
@@ -47,11 +47,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="@dimen/ten"
-                android:layout_marginRight="@dimen/margin"
-                android:lineHeight="22dp"
-                android:minHeight="22dp"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_16"
+                android:lineHeight="@dimen/dp_22"
+                android:minHeight="@dimen/dp_22"
                 android:text="@string/registration_content"
                 android:textColor="@color/three"
                 android:textSize="15sp" />
@@ -59,8 +59,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="@dimen/btn_circular"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_21"
                 android:text="@string/protect_information"
                 android:textColor="@color/three"
                 android:textSize="16sp" />
@@ -69,11 +69,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="@dimen/ten"
-                android:layout_marginRight="@dimen/margin"
-                android:lineHeight="22dp"
-                android:minHeight="22dp"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_16"
+                android:lineHeight="@dimen/dp_22"
+                android:minHeight="@dimen/dp_22"
                 android:text="@string/registration_content"
                 android:textColor="@color/three"
                 android:textSize="15sp" />

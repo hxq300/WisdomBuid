@@ -13,13 +13,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/dp_50"
         android:src="@mipmap/success_green" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/line_height"
+        android:layout_marginTop="@dimen/dp_45"
         android:text="交卷成功"
         android:textColor="@color/three"
         android:textSize="20sp"
@@ -28,9 +28,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/twelve"
+        android:layout_marginTop="@dimen/dp_12"
         android:gravity="center"
-        android:lineHeight="@dimen/btn_circular"
+        android:lineHeight="@dimen/dp_21"
         android:text="您的试卷已交由系统审核\n请您耐心等待 ！"
         android:textColor="@color/three"
         android:textSize="15sp" />

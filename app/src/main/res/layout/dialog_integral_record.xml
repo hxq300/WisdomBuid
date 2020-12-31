@@ -3,16 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="@dimen/margin">
+    android:padding="@dimen/dp_16">
 
     <LinearLayout
         android:id="@+id/line_top"
-        android:layout_width="233dp"
+        android:layout_width="@dimen/dp_233"
         android:layout_height="wrap_content"
         android:background="@mipmap/record_top"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/ten">
+        android:padding="@dimen/dp_10">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 android:id="@+id/record_dialog_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/five"
+                android:layout_marginTop="@dimen/dp_5"
                 android:text="兑换日期：2020-03-23"
                 android:textColor="@color/six"
                 android:textSize="11sp" />
@@ -46,7 +46,7 @@
             android:id="@+id/record_dialog_goods_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginLeft="@dimen/dp_10"
             android:src="@mipmap/good4" />
     </LinearLayout>
 
@@ -58,7 +58,7 @@
         android:background="@mipmap/record_bottom"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/margin">
+        android:padding="@dimen/dp_16">
 
         <ImageView
             android:id="@+id/record_dialog_zxing"
@@ -69,7 +69,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="26dp"
-            android:layout_marginTop="@dimen/ten"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center"
             android:text="此商品已兑换成功，如未取货，\n请尽快前往超市兑换！"
             android:textColor="@color/six"

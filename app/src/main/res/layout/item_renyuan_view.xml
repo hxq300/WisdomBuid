@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/five"
+    android:layout_margin="@dimen/dp_5"
     android:background="@color/bg_hui"
     android:gravity="center_horizontal"
     android:orientation="vertical">
@@ -10,17 +10,17 @@
     <ImageView
         android:id="@+id/reyuan_image"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/dp_100"
         android:src="@mipmap/people_renyuan" />
 
     <TextView
         android:id="@+id/renyuan_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
         android:drawableLeft="@mipmap/renyuan_icon"
-        android:drawablePadding="@dimen/five"
+        android:drawablePadding="@dimen/dp_5"
         android:text="李勇浩"
         android:textColor="@color/three"
         android:textSize="15sp" />

@@ -14,16 +14,16 @@
         <RelativeLayout
             android:id="@+id/rl_title_line"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:paddingTop="36dp">
+            android:layout_height="@dimen/dp_72"
+            android:paddingTop="@dimen/dp_36">
 
             <ImageView
-                android:layout_width="31dp"
+                android:layout_width="@dimen/dp_31"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="6dp"
+                android:layout_marginLeft="@dimen/dp_6"
                 android:onClick="back"
-                android:padding="10dp"
+                android:padding="@dimen/dp_10"
                 android:src="@mipmap/back_icon" />
 
             <TextView
@@ -40,11 +40,11 @@
 
         <ImageView
             android:id="@+id/persional_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/dp_96"
+            android:layout_height="@dimen/dp_96"
             android:layout_below="@id/rl_title_line"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/line_height"
+            android:layout_marginTop="@dimen/dp_45"
             android:src="@mipmap/mine_head" />
 
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/persional_image"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_16"
         android:text="李启航"
         android:textColor="@color/three"
         android:textSize="17sp" />
@@ -71,16 +71,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginRight="@dimen/margin"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/thirty">
+            android:paddingBottom="@dimen/dp_30">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_marginTop="@dimen/dp_16"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -101,7 +101,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/seven"
+                        android:layout_marginTop="@dimen/dp_7"
                         android:text="员工工种"
                         android:textColor="@color/three"
                         android:textSize="12sp" />
@@ -109,8 +109,8 @@
                 </LinearLayout>
 
                 <TextView
-                    android:layout_width="1dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_22"
                     android:layout_gravity="center_vertical"
                     android:background="@color/tab_focuse" />
 
@@ -132,7 +132,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/seven"
+                        android:layout_marginTop="@dimen/dp_7"
                         android:text="联系方式"
                         android:textColor="@color/three"
                         android:textSize="12sp" />
@@ -140,12 +140,12 @@
                 </LinearLayout>
 
                 <TextView
-                    android:layout_width="1dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_22"
                     android:layout_gravity="center_vertical"
                     android:background="@color/tab_focuse"
-                    android:paddingTop="@dimen/twelve"
-                    android:paddingBottom="@dimen/twelve" />
+                    android:paddingTop="@dimen/dp_12"
+                    android:paddingBottom="@dimen/dp_12" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/seven"
+                        android:layout_marginTop="@dimen/dp_7"
                         android:text="剩余积分"
                         android:textColor="@color/three"
                         android:textSize="12sp" />
@@ -177,12 +177,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_16"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -203,11 +203,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
+                android:layout_height="@dimen/dp_45"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -228,11 +228,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
+                android:layout_height="@dimen/dp_45"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -253,11 +253,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
+                android:layout_height="@dimen/dp_45"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -278,11 +278,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
+                android:layout_height="@dimen/dp_45"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -303,11 +303,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
+                android:layout_height="@dimen/dp_45"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/ten">
+                android:paddingLeft="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -329,11 +329,11 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_16"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/ten"
+                android:paddingLeft="@dimen/dp_10"
                 android:text="行为记录："
                 android:textColor="@color/three"
                 android:textSize="12sp" />
@@ -364,11 +364,11 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_16"
                 android:background="@mipmap/line_bg"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/ten"
+                android:paddingLeft="@dimen/dp_10"
                 android:text="考试记录："
                 android:textColor="@color/three"
                 android:textSize="12sp" />

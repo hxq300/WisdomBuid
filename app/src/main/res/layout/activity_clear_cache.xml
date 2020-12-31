@@ -12,13 +12,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="@dimen/ten"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_10"
         android:background="@color/f_nine"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/btn_circular"
-        android:paddingRight="@dimen/btn_circular">
+        android:paddingLeft="@dimen/dp_21"
+        android:paddingRight="@dimen/dp_21">
 
         <TextView
             android:layout_width="match_parent"
@@ -41,8 +41,8 @@
     <Button
         android:id="@+id/clean_btn"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_30"
         android:background="@color/f_nine"
         android:text="清除缓存"
         android:textColor="@color/btn_bule" />

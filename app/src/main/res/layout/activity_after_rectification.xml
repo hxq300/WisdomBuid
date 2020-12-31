@@ -56,10 +56,10 @@
             android:id="@+id/recycler_daizhenggai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ten"
-            android:layout_marginRight="@dimen/ten"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
             android:clipToPadding="false"
-            android:paddingBottom="@dimen/btn_circular">
+            android:paddingBottom="@dimen/dp_21">
 
         </androidx.recyclerview.widget.RecyclerView>
 

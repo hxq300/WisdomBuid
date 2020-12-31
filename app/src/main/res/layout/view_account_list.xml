@@ -2,23 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/ten"
+    android:layout_marginBottom="@dimen/dp_10"
     android:gravity="center_vertical"
     android:background="@color/f_ba"
     android:orientation="horizontal"
-    android:paddingTop="@dimen/seven"
-    android:paddingBottom="@dimen/seven">
+    android:paddingTop="@dimen/dp_7"
+    android:paddingBottom="@dimen/dp_7">
 
     <ImageView
-        android:layout_width="@dimen/line_height"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginLeft="@dimen/twelve"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_12"
         android:src="@mipmap/mine_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/twelve"
+        android:layout_marginLeft="@dimen/dp_12"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -43,7 +43,7 @@
         android:id="@+id/adp_account_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="@dimen/dp_20"
         android:src="@mipmap/check_icon" />
 
 </LinearLayout>

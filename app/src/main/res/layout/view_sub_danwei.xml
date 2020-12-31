@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="@dimen/dp_16"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -19,11 +19,11 @@
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:background="@color/light_blue"
-            android:padding="2dp"
+            android:padding="@dimen/dp_2"
             app:circle_color="@color/colorPrimaryDark"
             app:circle_r="0dp"
             app:configuration="horizontal"
-            app:line="210dp"
+            app:line="@dimen/dp_210"
             app:max_progress="100"
             app:min_progress="0"
             app:progress_bg_color="@color/white"
@@ -34,7 +34,7 @@
             android:id="@+id/sub_people_number"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/seven"
+            android:layout_marginLeft="@dimen/dp_7"
             android:text="30人"
             android:textColor="@color/three"
             android:textSize="12sp" />
@@ -44,7 +44,7 @@
         android:id="@+id/sub_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/five"
+        android:layout_marginTop="@dimen/dp_5"
         android:text="上海渊匠建筑工程有限公司"
         android:textColor="@color/three"
         android:textSize="12sp" />

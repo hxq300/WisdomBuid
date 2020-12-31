@@ -19,7 +19,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:clipChildren="false"
-        android:layout_height="52dp"
+        android:layout_height="@dimen/dp_52"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -41,7 +41,7 @@
                 android:id="@+id/id_one_tex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="@dimen/dp_3"
                 android:text="@string/home_page"
                 android:textColor="@color/tab_focuse"
                 android:textSize="11sp" />
@@ -59,7 +59,7 @@
 
             <ImageView
                 android:id="@+id/id_two_img"
-                android:layout_marginTop="-20dp"
+                android:layout_marginTop="@dimen/dp_minus_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/tab_pic" />
@@ -68,7 +68,7 @@
                 android:id="@+id/id_two_tex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="@dimen/dp_3"
                 android:text="@string/more"
                 android:visibility="gone"
                 android:textColor="@color/three"
@@ -94,7 +94,7 @@
                 android:id="@+id/id_three_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="@dimen/dp_3"
                 android:text="@string/mine"
                 android:textColor="@color/three"
                 android:textSize="11sp" />

@@ -12,8 +12,8 @@
 
         <TextView
             android:id="@+id/test_grade_desc"
-            android:layout_width="80dp"
-            android:layout_height="@dimen/line_height"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_45"
             android:gravity="center"
             android:text="序号"
             android:textColor="@color/three"
@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/test_grade_name"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/line_height"
+            android:layout_height="@dimen/dp_45"
             android:layout_weight="1"
             android:gravity="center"
             android:text="安全概念测试卷 "
@@ -31,8 +31,8 @@
 
         <TextView
             android:id="@+id/test_grade"
-            android:layout_width="90dp"
-            android:layout_height="@dimen/line_height"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_45"
             android:gravity="center"
             android:text="89分"
             android:textColor="@color/three"
@@ -40,8 +40,8 @@
 
         <ImageView
             android:id="@+id/test_grade_icon"
-            android:layout_width="90dp"
-            android:layout_height="@dimen/line_height"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_45"
             android:scaleType="center"
             android:src="@mipmap/grade_hege" />
 

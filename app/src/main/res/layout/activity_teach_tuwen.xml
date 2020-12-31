@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingLeft="@dimen/ten"
+        android:paddingLeft="@dimen/dp_10"
         android:text="这里是图文教程内容或者是网页"
         android:textColor="@color/tv_blue"
         android:textSize="12sp" />

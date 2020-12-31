@@ -11,7 +11,7 @@
 
     <TextView
         style="@style/fenge"
-        android:layout_marginTop="@dimen/ten" />
+        android:layout_marginTop="@dimen/dp_10" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="@dimen/thirty"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_30"
             android:gravity="center"
             android:text="序号"
             android:textColor="@color/three"
@@ -28,7 +28,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/thirty"
+            android:layout_height="@dimen/dp_30"
             android:layout_weight="1"
             android:gravity="center"
             android:text="试卷"
@@ -36,8 +36,8 @@
             android:textSize="12sp" />
 
         <TextView
-            android:layout_width="118dp"
-            android:layout_height="@dimen/thirty"
+            android:layout_width="@dimen/dp_118"
+            android:layout_height="@dimen/dp_30"
             android:gravity="center"
             android:text="考试时间"
             android:textColor="@color/three"

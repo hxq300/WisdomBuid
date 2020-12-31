@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="@dimen/dp_72"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="45sp" />
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/login_app_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="6.5dp"
+        android:layout_marginTop="@dimen/dp_6_half"
         android:letterSpacing="0.5"
         android:text="Wisdom site"
         android:textColor="@color/white"
@@ -32,28 +32,28 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:paddingLeft="19.5dp"
-        android:paddingRight="19.5dp">
+        android:paddingLeft="@dimen/dp_19_half"
+        android:paddingRight="@dimen/dp_19_half">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="56.5dp"
-            android:layout_marginRight="56.5dp"
+            android:layout_marginLeft="@dimen/dp_56_half"
+            android:layout_marginRight="@dimen/dp_56_half"
             android:background="@drawable/input_bg_white"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
+                android:layout_margin="@dimen/dp_7"
                 android:src="@mipmap/phone_icon" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="@dimen/dp_7"
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="请输入手机号"
@@ -66,22 +66,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="56.5dp"
-            android:layout_marginTop="@dimen/margin"
-            android:layout_marginRight="56.5dp"
+            android:layout_marginLeft="@dimen/dp_56_half"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_56_half"
             android:background="@drawable/input_bg_white"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
+                android:layout_margin="@dimen/dp_7"
                 android:src="@mipmap/phone_icon" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="@dimen/dp_7"
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="请输入验证码"
@@ -89,7 +89,7 @@
 
             <TextView
                 android:id="@+id/regist_get_code"
-                android:layout_width="75dp"
+                android:layout_width="@dimen/dp_75"
                 android:layout_height="match_parent"
                 android:background="@drawable/input_bg_blue"
                 android:gravity="center"
@@ -103,16 +103,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="56.5dp"
-            android:layout_marginTop="@dimen/margin"
-            android:layout_marginRight="56.5dp"
+            android:layout_marginLeft="@dimen/dp_56_half"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_56_half"
             android:background="@drawable/input_bg_white"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
+                android:layout_margin="@dimen/dp_7"
                 android:src="@mipmap/pass_icon" />
 
             <EditText
@@ -130,10 +130,10 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="56.5dp"
-            android:layout_marginTop="@dimen/margin"
-            android:layout_marginRight="56.5dp"
+            android:layout_height="@dimen/dp_35"
+            android:layout_marginLeft="@dimen/dp_56_half"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_56_half"
             android:background="@drawable/input_bg_blue"
             android:onClick="regerst"
             android:text="注册"

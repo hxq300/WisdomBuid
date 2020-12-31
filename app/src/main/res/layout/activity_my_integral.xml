@@ -7,23 +7,23 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="@dimen/dp_280"
         android:background="@mipmap/total_bg">
 
         <RelativeLayout
             android:id="@+id/top_bar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/line_height"
-            android:layout_marginTop="30dp"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_30"
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="31dp"
+                android:layout_width="@dimen/dp_31"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="6dp"
+                android:layout_marginLeft="@dimen/dp_6"
                 android:onClick="back"
-                android:padding="10dp"
+                android:padding="@dimen/dp_10"
                 android:src="@mipmap/back_icon" />
 
             <TextView
@@ -43,8 +43,8 @@
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:onClick="refresh"
-                android:paddingLeft="@dimen/margin"
-                android:paddingRight="@dimen/margin"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
                 android:text="@string/flush"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
@@ -56,8 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/top_bar"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_36"
             android:text="@string/available_integral"
             android:textColor="@color/white"
             android:textSize="18sp" />
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/total_av"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="@dimen/dp_50"
             android:text=""
             android:textColor="@color/white"
             android:textSize="50sp" />
@@ -77,18 +77,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="-60dp"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/btn_circular"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_minus_60"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_21"
         android:background="@mipmap/total_item_bg"
-        android:padding="@dimen/margin">
+        android:padding="@dimen/dp_16">
 
         <TextView
             android:id="@+id/total_mingxi"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:layout_marginLeft="@dimen/btn_circular"
+            android:layout_height="@dimen/dp_39"
+            android:layout_marginLeft="@dimen/dp_21"
             android:gravity="center_vertical"
             android:text="积分明细"
             android:textColor="@color/btn_bule"

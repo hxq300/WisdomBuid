@@ -5,21 +5,21 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="13dp">
+    android:padding="@dimen/dp_13">
 
     <ImageView
         android:id="@+id/type_icon"
-        android:layout_width="@dimen/line_height"
-        android:layout_height="@dimen/line_height"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:maxWidth="@dimen/dp_50"
+        android:maxHeight="@dimen/dp_50"
         android:src="@mipmap/main_renyuanguanli" />
 
     <TextView
         android:id="@+id/type_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/dp_12"
         android:singleLine="true"
         android:text="家庭婚姻"
         android:textColor="@color/six"

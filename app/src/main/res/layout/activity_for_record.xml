@@ -20,8 +20,8 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/ten"
-        android:paddingBottom="@dimen/line_height">
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_45">
 
     </androidx.recyclerview.widget.RecyclerView>
 

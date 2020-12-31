@@ -19,15 +19,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginRight="@dimen/margin"
-            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_100"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:layout_marginTop="@dimen/ten"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_45"
                 android:gravity="center_vertical"
                 android:text="项目详情"
                 android:textColor="@color/tab_focuse"
@@ -37,7 +37,7 @@
                 android:id="@+id/per_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lineHeight="25dp"
+                android:lineHeight="@dimen/dp_25"
                 android:text="\t\t\t\t①材料和外观：采用镀锌方管组合焊接，模板和铝塑
 板双层包裹；气动遥控控制，配CI喷绘广告和企业
 LOGO展示；\n\t\t\t\t②尺寸：整体高4.45米，长5.4米，可根据客户需求
@@ -56,13 +56,13 @@ LOGO展示；\n\t\t\t\t②尺寸：整体高4.45米，长5.4米，可根据客�
                 android:id="@+id/per_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin" />
+                android:layout_marginTop="@dimen/dp_16" />
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:layout_marginTop="@dimen/ten"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_10"
                 android:gravity="center_vertical"
                 android:text="体验人员"
                 android:textColor="@color/tab_focuse"
@@ -77,7 +77,7 @@ LOGO展示；\n\t\t\t\t②尺寸：整体高4.45米，长5.4米，可根据客�
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
-                    android:paddingBottom="@dimen/line_height">
+                    android:paddingBottom="@dimen/dp_45">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
