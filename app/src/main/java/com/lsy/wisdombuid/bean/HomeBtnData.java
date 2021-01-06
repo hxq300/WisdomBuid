@@ -38,11 +38,17 @@ public class HomeBtnData {
         this.data = data;
     }
 
-    public class BtnData {
+    public static class BtnData {
         //        {"id":1,"title_name":"main_anquanguanli","title_img":"main_anquanguanli.png"}
         private int id;
         private String title_name;
         private String title_img;
+
+        public BtnData(int id, String title_name, String title_img) {
+            this.id = id;
+            this.title_name = title_name;
+            this.title_img = title_img;
+        }
 
         public int getId() {
             return id;

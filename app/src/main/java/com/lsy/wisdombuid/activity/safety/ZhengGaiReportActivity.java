@@ -1,23 +1,36 @@
 package com.lsy.wisdombuid.activity.safety;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.adapter.UpdatePictureAdapter;
+import com.lsy.wisdombuid.adapter.ZhengGaiImgAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
 import com.lsy.wisdombuid.activity.login.LostPasswordActivity;
@@ -56,7 +69,6 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
     private IRecordData recordData;
 
     private TextView rTime, rStation, rName;
-
     private EditText rContent;//隐患内容
 
     //=========图片部分
@@ -72,7 +84,9 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
     private Uri uri;
 
     private List<String> imageList = new ArrayList<>();
-
+    private List<String> mImgAdapterList = new ArrayList<>();
+    private ZhengGaiImgAdapter mZhengGaiImgAdapter;
+    private RecyclerView rv_img;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +115,6 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
         rStation = findViewById(R.id.report_station);
         rName = findViewById(R.id.report_name);
         rContent = findViewById(R.id.report_content);
-
 //        //===
         picPahts.add(0, uri);
 
@@ -117,6 +130,35 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
         listAdapter = new UpdatePictureAdapter(ZhengGaiReportActivity.this, picPahts);
         listAdapter.setOnClick(this);
         idListRecycle.setAdapter(listAdapter);
+
+        rv_img = findViewById(R.id.rv_img);
+        mZhengGaiImgAdapter = new ZhengGaiImgAdapter(mImgAdapterList,this);
+        LinearLayoutManager layout = new LinearLayoutManager(this);
+        layout.setOrientation(LinearLayoutManager.HORIZONTAL);//设置为横向排列
+        rv_img.setLayoutManager(layout);
+        rv_img.setAdapter(mZhengGaiImgAdapter);
+
+        mZhengGaiImgAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String s = mImgAdapterList.get(position);
+                final Dialog dialog = new Dialog(ZhengGaiReportActivity.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+                ImageView imageView = new ImageView(ZhengGaiReportActivity.this);
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                Glide.with(ZhengGaiReportActivity.this)
+                        .load(RequestURL.OssUrl+s)
+                        .into(imageView);
+                dialog.setContentView(imageView);
+                dialog.show();
+            }
+        });
+
+
     }
 
     private void initData() {
@@ -125,12 +167,19 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
         Gson gson = new Gson();
 
         String data = sharedUtils.getData(SharedUtils.IRDETAILS, "");
-
+        Log.d("xxxxx", "initData: "+data);
         if (data != "" || !data.equals("")) {
             recordData = gson.fromJson(sharedUtils.getData(SharedUtils.IRDETAILS, ""), IRecordData.class);
             rTime.setText(" " + recordData.getUptime());
             rStation.setText("" + recordData.getStation_name());
             rName.setText("" + recordData.getRisk_name());
+            String url = recordData.getUrl();
+            String substring = url.substring(1, url.length()-1);
+            String[] split = substring.split(",");
+            for (String s : split) {
+                mImgAdapterList.add(s);
+            }
+            mZhengGaiImgAdapter.notifyDataSetChanged();
         } else {
             ToastUtils.showBottomToast(ZhengGaiReportActivity.this, "获取数据失败");
         }
@@ -221,8 +270,34 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
     @Override
     public void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
         String photoPath;
+        if (requestCode == 1500) {
+//            uri = data.toUri(MediaStore.EXTRA_OUTPUT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                photoPath = String.valueOf(cameraSavePath);
+            } else {
+                photoPath = uri.getEncodedPath();
+            }
 
-        if (requestCode == 123) {
+            if (resultCode != 0) {
+                Log.d("拍照返回图片路径:", "requestCode=" + requestCode + "resultCode=" + resultCode);
+                Log.d("拍照返真实:", RealPathFromUriUtils.compressImage(photoPath, this));
+                picPahts.add(0, uri);
+
+                L.log("picture", "======" + picPahts.toString());
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+                // 设置图片名字
+                String key = "images/" + sdf.format(new Date())+".jpg";
+
+                listAdapter.notifyDataSetChanged();
+                //上传的文件名filename，上传的文件路径filePath
+                updateOss(key, photoPath);
+            } else {
+                ToastUtils.showBottomToast(this, "获取图片失败-----" + resultCode);
+            }
+
+        }
+        else if (requestCode == 123) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 photoPath = String.valueOf(cameraSavePath);
             } else {
@@ -247,7 +322,7 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
                 // 设置图片名字
-                String key = "report/" + sdf.format(new Date());
+                String key = "report/" + sdf.format(new Date())+".jpg";
 
                 listAdapter.notifyDataSetChanged();
                 //上传的文件名filename，上传的文件路径filePath
@@ -277,11 +352,55 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
     @Override
     public void addPicture() {
         if (picPahts.size() <= 9) {
-            ToastUtils.showBottomToast(this, "正在打开相册");
-            goPhotoAlbum();
+            showBottomDialog();
         } else {
             ToastUtils.showBottomToast(this, "图片过多，请选择主要图片上传");
         }
+
+    }
+
+    //自定义底部弹出框
+    private void showBottomDialog() {
+        //1、使用Dialog、设置style
+        final Dialog dialog = new Dialog(this, R.style.DialogTheme);
+        //2、设置布局
+        View view = View.inflate(this, R.layout.dialog_custom_layout, null);
+        dialog.setContentView(view);
+
+        Window window = dialog.getWindow();
+        //设置弹出位置
+        window.setGravity(Gravity.BOTTOM);
+        //设置弹出动画
+        window.setWindowAnimations(R.style.main_menu_animStyle);
+        //设置对话框大小
+        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.show();
+
+        //拍照
+        dialog.findViewById(R.id.tv_take_photo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                goCamera();
+            }
+        });
+
+        //从相册中选择
+        dialog.findViewById(R.id.tv_take_pic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                goPhotoAlbum();
+            }
+        });
+
+        //取消
+        dialog.findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
 
     }
 
@@ -291,6 +410,23 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
         intent.setAction(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, 234);
+    }
+
+
+    //激活相机操作
+    private void goCamera() {
+        uri = null;
+        cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + System.currentTimeMillis() + ".jpg");
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            uri = FileProvider.getUriForFile(this, "com.lsy.wisdombuid.fileprovider", cameraSavePath);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            uri = Uri.fromFile(cameraSavePath);
+        }
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        startActivityForResult(intent, 1500);
     }
 
 
@@ -341,8 +477,6 @@ public class ZhengGaiReportActivity extends MyBaseActivity implements UpdatePict
     public void sucess(String backUrl) {
         imageList.add(0, backUrl);
         listAdapter.notifyDataSetChanged();
-
-        L.log("report", "imageList==" + imageList.toString());
     }
 
     //图片上传失败

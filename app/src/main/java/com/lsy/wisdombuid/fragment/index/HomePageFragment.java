@@ -24,6 +24,7 @@ import com.lsy.wisdombuid.activity.materia.MaterialMonitoringSystemActivity;
 import com.lsy.wisdombuid.activity.persion.ExperienceRecordActivity;
 import com.lsy.wisdombuid.activity.progress.ScheduleControlActivity;
 import com.lsy.wisdombuid.activity.quality.QMSActivity;
+import com.lsy.wisdombuid.activity.safety.AfterRectificationActivity;
 import com.lsy.wisdombuid.activity.safety.SafetyManagementActivity;
 import com.lsy.wisdombuid.adapter.RateAdapter;
 import com.lsy.wisdombuid.bean.HomeBtnData;
@@ -131,7 +132,9 @@ public class HomePageFragment extends MyFragment {
                         HomeBtnData btnData = gson.fromJson(dataString, HomeBtnData.class);
 
                         if (btnData.getData() != null) {
-                            rateAdapter = new RateAdapter(getActivity(), btnData.getData());
+                            List<HomeBtnData.BtnData> btnDataLists = btnData.getData();
+                            btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
+                            rateAdapter = new RateAdapter(getActivity(), btnDataLists);
 
                             //按钮点击事件
                             rateAdapter.setOnClick(new RateAdapter.OnClick() {
@@ -192,7 +195,12 @@ public class HomePageFragment extends MyFragment {
 //                                            Intent tiyan = new Intent(getContext(), ExperienceRecordActivity.class);
 //                                            startActivity(tiyan);
                                             break;
-
+                                        case 100: // 整改上报
+                                            Intent daizhenggai = new Intent();
+                                            daizhenggai.putExtra("stationnId", 1);
+                                            daizhenggai.setClass(getContext(), AfterRectificationActivity.class);
+                                            startActivity(daizhenggai);
+                                            break;
                                         default:
                                             break;
                                     }

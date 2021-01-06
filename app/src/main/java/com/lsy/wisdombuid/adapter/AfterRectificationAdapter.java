@@ -99,6 +99,7 @@ public class AfterRectificationAdapter extends RecyclerView.Adapter {
                         sharedUtils.setData(sharedUtils.IRDETAILS, "" + datas.toString());//存入对象
                         if (type == 1) {
                             Intent sbao = new Intent(context, ZhengGaiReportActivity.class);
+                            sbao.putExtra("url",datas.getUrl());
                             context.startActivity(sbao);
                         } else {
                             Intent sbao = new Intent(context, QMSReportActivity.class);

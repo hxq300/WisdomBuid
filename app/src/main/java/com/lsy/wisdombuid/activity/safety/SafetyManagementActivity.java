@@ -2,6 +2,7 @@ package com.lsy.wisdombuid.activity.safety;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +93,6 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
         presenter = new SafetySystemPresent(this, SafetyManagementActivity.this);
 
         presenter.getSelectStation("" + OKHttpClass.getToken(SafetyManagementActivity.this));
-
         initData1();
 
     }
@@ -143,7 +143,6 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
                 Intent daizhenggai = new Intent();
                 daizhenggai.putExtra("stationnId", station_id);
                 daizhenggai.setClass(SafetyManagementActivity.this, AfterRectificationActivity.class);
-
                 startActivity(daizhenggai);
                 break;
 

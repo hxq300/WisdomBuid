@@ -89,6 +89,7 @@ public class InspectionRecordAdapter extends RecyclerView.Adapter {
                             if (type == 3 || type == 4) {
                                 Intent intent = new Intent();
                                 intent.putExtra("type", type);
+                                intent.putExtra("url",datas.getUrl());
                                 intent.setClass(context, ZhengGaiReviewActivity.class);
 
                                 context.startActivity(intent);
