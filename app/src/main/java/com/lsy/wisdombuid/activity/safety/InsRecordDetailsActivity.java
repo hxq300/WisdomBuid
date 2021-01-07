@@ -1,22 +1,29 @@
 package com.lsy.wisdombuid.activity.safety;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.adapter.InspectionRecordAdapter;
 import com.lsy.wisdombuid.adapter.RectNoticeAdapter;
+import com.lsy.wisdombuid.adapter.ZhengGaiImgAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
 import com.lsy.wisdombuid.request.OKHttpClass;
@@ -65,6 +72,10 @@ public class InsRecordDetailsActivity extends MyBaseActivity {
 
     private TextView wuxiao;
     private Button btnCom;
+    private String url;
+    private List<String> mImgAdapterList = new ArrayList<>();
+    private ZhengGaiImgAdapter mZhengGaiImgAdapter;
+    private RecyclerView rv_img;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,11 +88,11 @@ public class InsRecordDetailsActivity extends MyBaseActivity {
             StatusBarUtil.setStatusBarColor(this, 0xFFA400);
         }
         titleBar = findViewById(R.id.title_bar);
-
+        rv_img = findViewById(R.id.rv_img);
         Intent intent = getIntent();
 
         type = intent.getIntExtra("type", 1);
-
+        url = intent.getStringExtra("url");
         L.log("record", "type===" + type);
 
         initTitle();
@@ -95,6 +106,40 @@ public class InsRecordDetailsActivity extends MyBaseActivity {
         //初始化数据
         initData();
 
+        initAdapter();
+    }
+    private void initAdapter() {
+        String substring = url.substring(1, url.length()-1);
+        String[] split = substring.split(",");
+        for (String s : split) {
+            mImgAdapterList.add(s);
+        }
+        mZhengGaiImgAdapter = new ZhengGaiImgAdapter(mImgAdapterList,this);
+        LinearLayoutManager layout = new LinearLayoutManager(this);
+        layout.setOrientation(LinearLayoutManager.HORIZONTAL);//设置为横向排列
+        rv_img.setLayoutManager(layout);
+        rv_img.setAdapter(mZhengGaiImgAdapter);
+
+
+        mZhengGaiImgAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String s = mImgAdapterList.get(position);
+                final Dialog dialog = new Dialog(InsRecordDetailsActivity.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+                ImageView imageView = new ImageView(InsRecordDetailsActivity.this);
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                Glide.with(InsRecordDetailsActivity.this)
+                        .load(RequestURL.OssUrl+s)
+                        .into(imageView);
+                dialog.setContentView(imageView);
+                dialog.show();
+            }
+        });
     }
 
     private void initView() {
@@ -267,8 +312,13 @@ public class InsRecordDetailsActivity extends MyBaseActivity {
 
     //提交
     public void recordCommit(View view) {
-        if (GeneralMethod.isFastClick()) {
-            upAudit();
+        if (0 == sJifen.getText().length()){
+            ToastUtils.showBottomToast(this,"请给予一定积分!");
+        }else {
+            if (GeneralMethod.isFastClick()) {
+                upAudit();
+            }
         }
+
     }
 }

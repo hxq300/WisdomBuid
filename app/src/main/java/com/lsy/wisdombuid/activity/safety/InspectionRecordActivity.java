@@ -1,17 +1,22 @@
 package com.lsy.wisdombuid.activity.safety;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.adapter.InspectionRecordAdapter;
+import com.lsy.wisdombuid.adapter.ZhengGaiImgAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
 import com.lsy.wisdombuid.request.OKHttpClass;
@@ -85,6 +90,7 @@ public class InspectionRecordActivity extends MyBaseActivity {
 
 
     }
+
 
     //检查记录
     private void getRecord() {

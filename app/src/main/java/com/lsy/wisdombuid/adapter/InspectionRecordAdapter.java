@@ -96,6 +96,7 @@ public class InspectionRecordAdapter extends RecyclerView.Adapter {
                             } else {
                                 Intent intent = new Intent();
                                 intent.putExtra("type", type);
+                                intent.putExtra("url",datas.getUrl());
                                 intent.setClass(context, InsRecordDetailsActivity.class);
 
                                 context.startActivity(intent);

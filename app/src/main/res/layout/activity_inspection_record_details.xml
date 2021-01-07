@@ -133,6 +133,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_157"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片展示："
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_120"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dp_30"
         android:gravity="center_vertical"
         android:orientation="horizontal"

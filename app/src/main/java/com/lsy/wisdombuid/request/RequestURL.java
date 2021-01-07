@@ -5,10 +5,10 @@ package com.lsy.wisdombuid.request;
  * MODO :
  */
 public class RequestURL {
-    // 正式服
-//    public static String RequestUrl = "http://192.168.1.103:8891";
     // 测试服
-    public static String RequestUrl = "http://101.132.154.10:8891";
+    public static String RequestUrl = "http://192.168.1.103:8891";
+    // 正式服
+//    public static String RequestUrl = "http://101.132.154.10:8891";
 
     public static String RequestImg = "http://101.132.154.10:8891/img/download_img?img_url=";
     public static String OssUrl = "http://jjjt.oss-cn-shanghai.aliyuncs.com/";

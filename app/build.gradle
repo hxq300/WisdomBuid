@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'multi-languages'
 
 android {
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -34,17 +35,6 @@ android {
         }
     }
 
-    /**
-     * 配置keystore签名
-     */
-    signingConfigs {
-        release {
-            keyAlias 'wisdombuild'
-            keyPassword 'wisdombuild'
-            storeFile file('wisdombuild.jks')
-            storePassword 'wisdombuild'
-        }
-    }
 
     compileOptions {
 
@@ -53,6 +43,32 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
 
     }
+
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\a\\Desktop\\WisdomBuid\\wisdombuild.jks')
+            storePassword 'wisdombuild'
+            keyAlias = 'wisdombuild'
+            keyPassword 'wisdombuild'
+        }
+        debug {
+            storeFile file('C:\\Users\\a\\Desktop\\WisdomBuid\\wisdombuild.jks')
+            storePassword 'wisdombuild'
+            keyAlias = 'wisdombuild'
+            keyPassword 'wisdombuild'
+        }
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "wisdombuild${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
+            }
+    }
+
+}
+def releaseTime() {
+    return new Date().format("yyyyMMddhhmmss", TimeZone.getTimeZone("GMT+08:00"))
 }
 
 dependencies {
