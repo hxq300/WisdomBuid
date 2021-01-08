@@ -69,7 +69,7 @@ public class SubContractorAdapter extends RecyclerView.Adapter {
         public void bindData(Object item, final int position) {
             final SubContractorData datas = (SubContractorData) item;
 
-            pNum.setText(datas.getCount() + "人");
+            pNum.setText(datas.getCount()+"");
             pName.setText("" + datas.getSub_name());
 
             seekBar.setValue(toScale(datas.getCount(), allPeople));

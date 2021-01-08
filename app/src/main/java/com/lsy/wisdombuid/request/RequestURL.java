@@ -97,4 +97,10 @@ public class RequestURL {
     public static String findTrainRecordByTrainName = RequestUrl + "/TrainRecord/FindTrainRecordByTrainName?";//体验项目详情 及 体验人员信息
 
 
+    //---------安全管理内部的统计图
+    public static String safetyType = RequestUrl + "/count_App/CountRiskshowByRiskId?"; //根据安全隐患类型查询数量总数
+    public static String safetyUnit = RequestUrl + "/count_App/CountRiskshowBySubId?"; //根据分包单位查询安全隐患数量总数
+
+
+
 }

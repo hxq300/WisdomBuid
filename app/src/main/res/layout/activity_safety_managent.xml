@@ -347,13 +347,20 @@
                     android:padding="@dimen/dp_10"
                     android:text="最近一个月隐患分析"
                     android:textColor="@color/three"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
 
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/chart"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_300"
                     android:layout_margin="@dimen/dp_21" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_sub_contractor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

@@ -88,8 +88,11 @@ public class HomePageFragment extends MyFragment {
         initView();
         initBanner();
 
-        getBtnPermission();
+        // 请求接口 获取不同功能模块的 图片+名称 例如（安全管理 积分兑换 等）
+//        getBtnPermission();
 
+        // 2021-01-08（修改方案 前端写死）
+        initBtn();
     }
 
     private void initView() {
@@ -103,6 +106,60 @@ public class HomePageFragment extends MyFragment {
 
         lineSearch.getBackground().mutate().setAlpha(98);
 
+    }
+
+    private void initBtn() {
+        List<HomeBtnData.BtnData> btnDataLists = new ArrayList<>();
+        btnDataLists.add(new HomeBtnData.BtnData(1, "人员管理", "main_renyuanguanli.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(2, "安全管理", "main_anquanguanli.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(3, "物料监测", "main_wuliaojiancce.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(4, "积分兑换", "main_jifen.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(5, "培训考核", "main_peixun.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", "main_anquantiyan.png"));
+        btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
+        rateAdapter = new RateAdapter(getActivity(), btnDataLists);
+        rateRecycle.setAdapter(rateAdapter);
+        adapterSetOnClick(rateAdapter);
+    }
+
+    private void adapterSetOnClick(RateAdapter rateAdapter) {
+        rateAdapter.setOnClick(new RateAdapter.OnClick() {
+            @Override
+            public void zixunNow(int position) {
+                switch (position){
+                    case 1:
+                        Intent renyuan = new Intent(getContext(), PersonnelManagementActivity.class);
+                        startActivity(renyuan);
+                        break;
+                    case 2:
+                        Intent guanli = new Intent(getContext(), SafetyManagementActivity.class);
+                        startActivity(guanli);
+                        break;
+                    case 3:
+                        Intent materia = new Intent(getContext(), MaterialMonitoringSystemActivity.class);
+                        startActivity(materia);
+                        break;
+                    case 4:
+                        Intent jifen = new Intent(getContext(), CreditsExchangeActivity.class);
+                        startActivity(jifen);
+                        break;
+                    case 5:
+                        Intent peixun = new Intent(getContext(), TrainingCheckActivity.class);
+                        startActivity(peixun);
+                        break;
+                    case 6:
+                        Intent tiyan = new Intent(getContext(), ExperienceRecordActivity.class);
+                        startActivity(tiyan);
+                        break;
+                    case 100:
+                        Intent daizhenggai = new Intent();
+                        daizhenggai.putExtra("stationnId", 1);
+                        daizhenggai.setClass(getContext(), AfterRectificationActivity.class);
+                        startActivity(daizhenggai);
+                        break;
+                }
+            }
+        });
     }
 
     private void getBtnPermission() {

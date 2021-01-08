@@ -22,22 +22,37 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.gson.Gson;
 import com.lsy.wisdombuid.R;
+import com.lsy.wisdombuid.activity.ITunesActivity;
+import com.lsy.wisdombuid.activity.quality.QMSRecordActivity;
+import com.lsy.wisdombuid.adapter.SubContractorAdapter;
 import com.lsy.wisdombuid.adapter.ZhandianAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.SafetyIndexData;
+import com.lsy.wisdombuid.bean.SafetyTypeEntity;
+import com.lsy.wisdombuid.bean.SafetyUnitEntity;
 import com.lsy.wisdombuid.bean.StationData;
+import com.lsy.wisdombuid.bean.SubContractorData;
+import com.lsy.wisdombuid.bean.UserData;
 import com.lsy.wisdombuid.mvp.safety.SafetySystemInterface;
 import com.lsy.wisdombuid.mvp.safety.SafetySystemPresent;
 import com.lsy.wisdombuid.request.OKHttpClass;
+import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
 import com.lsy.wisdombuid.util.SharedUtils;
 import com.lsy.wisdombuid.util.StatusBarUtil;
 import com.lsy.wisdombuid.util.ToastUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.umeng.socialize.utils.ContextUtil.getContext;
 
@@ -71,8 +86,11 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
     private TextView sNumber, sZhenggailv, sYizhenggai, sWeizhenggai, sCaoqi;
 
     private int station_id = 0;
-
-
+    private int[] allColor = {0xffF699FF, 0xff9A8AE8, 0xffFFF5EE, 0xffFFFFF0, 0xffFFF8DC, 0xffFFFF00, 0xffFFFFE0};
+    private RecyclerView idListRecycle;
+    private SubContractorAdapter listAdapter;
+    private List<SubContractorData> messageLists = new ArrayList<>();
+    int allNum = 0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,11 +107,12 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
         sharedUtils = new SharedUtils(SafetyManagementActivity.this, SharedUtils.WISDOM);
 
         initView();
-
+        initDataType(RequestURL.safetyType);
+        initDataUnit(RequestURL.safetyUnit);
         presenter = new SafetySystemPresent(this, SafetyManagementActivity.this);
 
         presenter.getSelectStation("" + OKHttpClass.getToken(SafetyManagementActivity.this));
-        initData1();
+//        initData1();
 
     }
 
@@ -124,6 +143,12 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
             }
         });
 
+        idListRecycle = (RecyclerView) findViewById(R.id.recycler_sub_contractor);
+        idListRecycle.setItemViewCacheSize(100);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        idListRecycle.setLayoutManager(linearLayoutManager);
+        idListRecycle.setNestedScrollingEnabled(false);
+
     }
 
     @Override
@@ -135,6 +160,9 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
         }
     }
 
+    /**
+     * 点击事件
+     */
     public void safetyManagent(View view) {
 
         switch (view.getId()) {
@@ -178,19 +206,152 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
                 break;
 
             case R.id.safety_danger_type://隐患类型分析
-                Intent analysis = new Intent(SafetyManagementActivity.this, QuantityAnalysisDangerActivity.class);
-                startActivity(analysis);
+                chart.setVisibility(View.VISIBLE);
+                idListRecycle.setVisibility(View.GONE);
+
+//                initDataType(RequestURL.safetyType);
+//                Intent analysis = new Intent(SafetyManagementActivity.this, QuantityAnalysisDangerActivity.class);
+//                startActivity(analysis);
                 break;
 
             case R.id.safety_yinhuan_fenxi://分包单位隐患分析
-                Intent fenbao = new Intent(SafetyManagementActivity.this, FenBaoYinghuanFenxiActivity.class);
-                startActivity(fenbao);
+//                initDataType(RequestURL.safetyUnit);
+//                Intent fenbao = new Intent(SafetyManagementActivity.this, FenBaoYinghuanFenxiActivity.class);
+//                startActivity(fenbao);
+                chart.setVisibility(View.GONE);
+                idListRecycle.setVisibility(View.VISIBLE);
                 break;
 
             default:
                 break;
         }
 
+    }
+
+    private void setChartData(List<SafetyTypeEntity.DataBean> list1) {
+        //返回标签设置的文本颜色
+        chart.getDescription().setEnabled(true);
+        /*设置仅在活动图表上可见的最大绘制值的数量
+         *当启用setDrawValues()时
+         */
+        chart.setMaxVisibleValueCount(100);
+        //缩放
+        chart.setPinchZoom(false);
+        chart.setDrawBarShadow(false);
+        //将此设置为true以绘制网格背景，否则为false
+        chart.setDrawGridBackground(false);
+
+        //
+        chart.setNoDataText("暂时没有数据");
+
+        chart.animateY(1500);
+        chart.getLegend().setEnabled(false);
+
+//        IAxisValueFormatter xAxisFormatter = new DefaultAxisValueFormatter(chart);
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+        xAxis.setLabelCount(3);
+
+//        xAxis.setValueFormatter(xAxisFormatter);
+
+        ArrayList<BarEntry> values = new ArrayList<>();
+        final String[] months;
+        int[] colors;
+
+        months = new String[list1.size()];
+        colors = new int[list1.size()];
+
+        for (int i = 0; i < list1.size(); i++) {
+            colors[i] = allColor[i];
+            months[i] = list1.get(i).getRisk_name();
+            values.add(new BarEntry(i, Integer.parseInt(list1.get(i).getCount())));
+        }
+
+
+        BarDataSet set1;
+        if (chart.getData() != null &&
+                chart.getData().getDataSetCount() > 0) {
+            set1 = (BarDataSet) chart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            chart.getData().notifyDataChanged();
+            chart.notifyDataSetChanged();
+        } else {
+
+            set1 = new BarDataSet(values, "data");
+//            set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
+            set1.setColors(colors);
+            set1.setDrawValues(true);
+            set1.setValueTextSize(16f);
+            set1.setValueTextColor(colors[1]);
+            ArrayList<IBarDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1);
+
+            BarData data = new BarData(dataSets);
+            chart.setData(data);
+            chart.setFitBars(true);
+            xAxis.setValueFormatter(new IAxisValueFormatter() {
+                @Override
+                public String getFormattedValue(float value, AxisBase axis) {
+                    return months[(int) value % months.length];
+                }
+            });
+        }
+
+        //这里的作用是将X轴上的文字旋转80度
+//        chart.getXAxis().setLabelRotationAngle(-80);
+        chart.getXAxis().setLabelRotationAngle(0);
+        chart.getAxisRight().setEnabled(false);
+        chart.setScaleYEnabled(false);
+        chart.setScaleXEnabled(false);
+        chart.invalidate();
+    }
+    private void initDataUnit(String url){
+        Map<String, Object> listcanshu = new HashMap<>();
+        OKHttpClass okHttpClass = new OKHttpClass();
+        listcanshu.put("section_id", OKHttpClass.getToken(this));
+
+        //设置请求类型、地址和参数
+        okHttpClass.setPostCanShu(this, url, listcanshu);
+        okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
+            @Override
+            public String requestData(String dataString) {
+                Gson gson = new Gson();
+
+                SafetyUnitEntity safetyUnitEntity = gson.fromJson(dataString, SafetyUnitEntity.class);
+                List<SafetyUnitEntity.DataBean> data = safetyUnitEntity.getData();
+                for (SafetyUnitEntity.DataBean datum : data) {
+                    SubContractorData data1 = new SubContractorData(Integer.parseInt(datum.getCount()), datum.getSub_name());
+                    allNum += data1.getCount();
+                    messageLists.add(data1);
+                }
+                listAdapter = new SubContractorAdapter(SafetyManagementActivity.this, messageLists, allNum);
+                idListRecycle.setAdapter(listAdapter);
+                return dataString;
+            }
+        });
+    }
+    private void initDataType(String url) {
+        Map<String, Object> listcanshu = new HashMap<>();
+        OKHttpClass okHttpClass = new OKHttpClass();
+        listcanshu.put("section_id", OKHttpClass.getToken(this));
+
+        //设置请求类型、地址和参数
+        okHttpClass.setPostCanShu(this, url, listcanshu);
+        okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
+            @Override
+            public String requestData(String dataString) {
+                Gson gson = new Gson();
+
+                SafetyTypeEntity safetyTypeEntity = gson.fromJson(dataString, SafetyTypeEntity.class);
+                List<SafetyTypeEntity.DataBean> data = safetyTypeEntity.getData();
+                setChartData(data);
+
+
+                return dataString;
+            }
+        });
     }
 
     //=======
