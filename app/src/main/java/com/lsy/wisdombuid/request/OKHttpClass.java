@@ -146,6 +146,19 @@ public class OKHttpClass {
         PostKeyValue(url, listcanshu);
     }
 
+    public void setPostNoToken(String url,Object listcanshu){
+        PostKeyValue(url, listcanshu);
+    }
+
+    public void setPostYesToken(Context context,String resUrl, String token, Object listcanshu) {
+        if (token == null) {
+            token = "";
+        }
+        SharedUtils sharedUtils = new SharedUtils(context, SharedUtils.WISDOM);
+        String url = resUrl +"&token=" +token+"&userId="+sharedUtils.getIntData(SharedUtils.GPS_USER_ID)+"&carIds=161328,161329,161330,161331,161332,161333";
+        PostKeyValue(url, listcanshu);
+    }
+
     /**
      * 设置post请求的参数
      */

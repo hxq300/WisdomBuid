@@ -72,7 +72,11 @@ public class RateAdapter extends RecyclerView.Adapter {
             idText.setText(datas.getTitle_name());
             if (((HomeBtnData.BtnData) item).getId() == 100){
                 Glide.with(context).load(R.mipmap.safety_daizhenggai).into(icon);
-            }else {
+            }
+            else if (((HomeBtnData.BtnData) item).getId() == 200){
+                Glide.with(context).load(R.mipmap.gps_icon).into(icon);
+            }
+            else {
                 Glide.with(context).load(RequestURL.RequestImg + datas.getTitle_img()).into(icon);
             }
 

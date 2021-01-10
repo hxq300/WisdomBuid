@@ -10,7 +10,9 @@ import static android.content.Context.MODE_PRIVATE;
  * MODO :
  */
 public class SharedUtils {
-
+    // 地图 token
+    public static final String GPS = "gps";
+    public static final String GPS_USER_ID = "gpsUserId";
     //文件名
     public static final String WISDOM = "WisdomDate";
 

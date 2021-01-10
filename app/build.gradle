@@ -51,12 +51,6 @@ android {
             keyAlias = 'wisdombuild'
             keyPassword 'wisdombuild'
         }
-        debug {
-            storeFile file('C:\\Users\\a\\Desktop\\WisdomBuid\\wisdombuild.jks')
-            storePassword 'wisdombuild'
-            keyAlias = 'wisdombuild'
-            keyPassword 'wisdombuild'
-        }
     }
 
     android.applicationVariants.all {
@@ -157,6 +151,10 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.24'
 
+    implementation 'com.lzy.net:okgo:3.0.4'
+
+    implementation files('src/main/jniLibs/BaiduLBS_Android.jar')
+    implementation project(path: ':calendar')
 }
 
 multiLanguages {

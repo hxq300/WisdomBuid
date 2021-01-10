@@ -25,6 +25,7 @@ import com.lsy.wisdombuid.activity.persion.ExperienceRecordActivity;
 import com.lsy.wisdombuid.activity.progress.ScheduleControlActivity;
 import com.lsy.wisdombuid.activity.quality.QMSActivity;
 import com.lsy.wisdombuid.activity.safety.AfterRectificationActivity;
+import com.lsy.wisdombuid.activity.safety.GPSActivity;
 import com.lsy.wisdombuid.activity.safety.SafetyManagementActivity;
 import com.lsy.wisdombuid.adapter.RateAdapter;
 import com.lsy.wisdombuid.bean.HomeBtnData;
@@ -117,6 +118,7 @@ public class HomePageFragment extends MyFragment {
         btnDataLists.add(new HomeBtnData.BtnData(5, "培训考核", "main_peixun.png"));
         btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", "main_anquantiyan.png"));
         btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
+        btnDataLists.add(new HomeBtnData.BtnData(200, "车辆定位", ""));
         rateAdapter = new RateAdapter(getActivity(), btnDataLists);
         rateRecycle.setAdapter(rateAdapter);
         adapterSetOnClick(rateAdapter);
@@ -156,6 +158,11 @@ public class HomePageFragment extends MyFragment {
                         daizhenggai.putExtra("stationnId", 1);
                         daizhenggai.setClass(getContext(), AfterRectificationActivity.class);
                         startActivity(daizhenggai);
+                        break;
+                    case 200: // 车辆定位
+                        Intent intent = new Intent();
+                        intent.setClass(getContext(), GPSActivity.class);
+                        startActivity(intent);
                         break;
                 }
             }
