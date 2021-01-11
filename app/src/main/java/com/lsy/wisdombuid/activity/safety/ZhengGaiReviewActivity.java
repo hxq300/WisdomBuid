@@ -122,8 +122,8 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
         rv_img.setLayoutManager(layout);
         rv_img.setAdapter(mZhengGaiImgAdapter);
 
-        String ss = url.substring(1, recordData.getZg_url().length() - 1);
-        String[] strings = substring.split(",");
+        String ss = recordData.getZg_url().substring(1, recordData.getZg_url().length() - 1);
+        String[] strings = ss.split(",");
         for (String string : strings) {
             mZgImgAdapterList.add(string);
         }
