@@ -25,13 +25,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_inspection_record"
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_inspection_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
 
     </RelativeLayout>
 

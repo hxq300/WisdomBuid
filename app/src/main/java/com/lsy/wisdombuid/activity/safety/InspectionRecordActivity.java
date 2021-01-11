@@ -19,6 +19,7 @@ import com.lsy.wisdombuid.adapter.InspectionRecordAdapter;
 import com.lsy.wisdombuid.adapter.ZhengGaiImgAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
+import com.lsy.wisdombuid.bean.RectifyEntity;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
@@ -50,7 +51,7 @@ public class InspectionRecordActivity extends MyBaseActivity {
     private String title;
     private int pageNo = 1;
 
-    private List<IRecordData> dataList = new ArrayList<>();
+    private List<RectifyEntity.ItemsBean> dataList = new ArrayList<>();
 
 
     @Override
@@ -113,32 +114,20 @@ public class InspectionRecordActivity extends MyBaseActivity {
             public String requestData(String dataString) {
                 //请求成功数据回调
                 L.log("safetyInspectionRecord", "record==" + dataString);
+
                 Gson gson = new Gson();
+                RectifyEntity rectifyEntity = gson.fromJson(dataString, RectifyEntity.class);
+                dataList.addAll(rectifyEntity.getItems());
 
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(dataString);
 
-                    JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
-
-                    dataList.clear();
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        IRecordData data = gson.fromJson(jsonArray.get(i).toString(), IRecordData.class);
-
-                        dataList.add(data);
-                    }
-                    if (dataList != null && dataList.size() > 0) {
-                        listAdapter = new InspectionRecordAdapter(InspectionRecordActivity.this, dataList, 1);
-                        idListRecycle.setAdapter(listAdapter);
-                        noData.setVisibility(View.GONE);
-                    } else {
-                        noData.setVisibility(View.VISIBLE);
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                if (dataList != null && dataList.size() > 0) {
+                    listAdapter = new InspectionRecordAdapter(InspectionRecordActivity.this, dataList, 1);
+                    idListRecycle.setAdapter(listAdapter);
+                    noData.setVisibility(View.GONE);
+                } else {
+                    noData.setVisibility(View.VISIBLE);
                 }
+
                 return dataString;
             }
         });
@@ -163,33 +152,19 @@ public class InspectionRecordActivity extends MyBaseActivity {
             @Override
             public String requestData(String dataString) {
                 //请求成功数据回调
-                L.log("record", "无效数据==" + dataString);
                 Gson gson = new Gson();
+                RectifyEntity rectifyEntity = gson.fromJson(dataString, RectifyEntity.class);
+                dataList.addAll(rectifyEntity.getItems());
 
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(dataString);
-
-                    JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
-
-                    dataList.clear();
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        IRecordData data = gson.fromJson(jsonArray.get(i).toString(), IRecordData.class);
-
-                        dataList.add(data);
-                    }
-                    if (dataList != null && dataList.size() > 0) {
-                        listAdapter = new InspectionRecordAdapter(InspectionRecordActivity.this, dataList, 2);
-                        idListRecycle.setAdapter(listAdapter);
-                        noData.setVisibility(View.GONE);
-                    } else {
-                        noData.setVisibility(View.VISIBLE);
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                if (dataList != null && dataList.size() > 0) {
+                    listAdapter = new InspectionRecordAdapter(InspectionRecordActivity.this, dataList, 2);
+                    idListRecycle.setAdapter(listAdapter);
+                    noData.setVisibility(View.GONE);
+                } else {
+                    noData.setVisibility(View.VISIBLE);
                 }
+
+
                 return dataString;
             }
         });

@@ -46,6 +46,8 @@ public class IRecordData {
     private int staff_id;//员工ID
 
     private String plan_time;
+    private String zg_description; // 整改描述
+
 
     //===质量
 //    "quality_id":1,
@@ -53,6 +55,14 @@ public class IRecordData {
 
     private int quality_id;
     private String quality_name;
+
+    public String getZg_description() {
+        return zg_description;
+    }
+
+    public void setZg_description(String zg_description) {
+        this.zg_description = zg_description;
+    }
 
     public int getQuality_id() {
         return quality_id;

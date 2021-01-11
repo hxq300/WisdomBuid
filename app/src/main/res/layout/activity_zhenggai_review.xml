@@ -31,39 +31,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="上报人："
+            android:text="隐患内容："
             android:textColor="@color/six"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/zhenggai_shangbaoren"
+            android:id="@+id/iv_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="刘能"
-            android:textColor="@color/three"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_30"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/dp_10">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="站点："
-            android:textColor="@color/six"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/zhenggai_station"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="鹿城路站"
             android:textColor="@color/three"
             android:textSize="14sp" />
 
@@ -79,7 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="图片展示："
+            android:text="隐患图片："
             android:textColor="@color/six"
             android:textSize="14sp" />
         <androidx.recyclerview.widget.RecyclerView
@@ -109,6 +85,99 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="右线掘进"
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传时间："
+            android:textColor="@color/six"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/iv_uptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改描述："
+            android:textColor="@color/six"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/iv_zg_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="鹿城路站"
+            android:textColor="@color/three"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_157"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改图片："
+            android:textColor="@color/six"
+            android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_zg_url"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_120"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整改时间："
+            android:textColor="@color/six"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/iv_plan_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="鹿城路站"
             android:textColor="@color/three"
             android:textSize="14sp" />
 

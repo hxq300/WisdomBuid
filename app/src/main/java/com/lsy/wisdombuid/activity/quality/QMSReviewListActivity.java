@@ -14,6 +14,7 @@ import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.adapter.InspectionRecordAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
+import com.lsy.wisdombuid.bean.RectifyEntity;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
@@ -44,7 +45,7 @@ public class QMSReviewListActivity extends MyBaseActivity {
     private int intId = 1;//1\查询记录  2、无效数据a
     private int pageNo = 1;
 
-    private List<IRecordData> dataList = new ArrayList<>();
+    private List<RectifyEntity.ItemsBean> dataList = new ArrayList<>();
 
 
     @Override
@@ -98,20 +99,8 @@ public class QMSReviewListActivity extends MyBaseActivity {
                 //请求成功数据回调
                 L.log("safetyInspectionRecord", "record==" + dataString);
                 Gson gson = new Gson();
-
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(dataString);
-
-                    JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
-
-                    dataList.clear();
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        IRecordData data = gson.fromJson(jsonArray.get(i).toString(), IRecordData.class);
-
-                        dataList.add(data);
-                    }
+                RectifyEntity rectifyEntity = gson.fromJson(dataString, RectifyEntity.class);
+                dataList.addAll(rectifyEntity.getItems());
                     if (dataList != null && dataList.size() > 0) {
                         listAdapter = new InspectionRecordAdapter(QMSReviewListActivity.this, dataList, 4);
                         idListRecycle.setAdapter(listAdapter);
@@ -120,9 +109,6 @@ public class QMSReviewListActivity extends MyBaseActivity {
                         noData.setVisibility(View.VISIBLE);
                     }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 return dataString;
             }
         });

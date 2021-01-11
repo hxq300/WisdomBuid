@@ -44,26 +44,8 @@ android {
 
     }
 
-    signingConfigs {
-        release {
-            storeFile file('C:\\Users\\a\\Desktop\\WisdomBuid\\wisdombuild.jks')
-            storePassword 'wisdombuild'
-            keyAlias = 'wisdombuild'
-            keyPassword 'wisdombuild'
-        }
-    }
-
-    android.applicationVariants.all {
-        variant ->
-            variant.outputs.all {
-                outputFileName = "wisdombuild${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
-            }
-    }
-
 }
-def releaseTime() {
-    return new Date().format("yyyyMMddhhmmss", TimeZone.getTimeZone("GMT+08:00"))
-}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -153,8 +135,12 @@ dependencies {
 
     implementation 'com.lzy.net:okgo:3.0.4'
 
+    // 百度地图
     implementation files('src/main/jniLibs/BaiduLBS_Android.jar')
     implementation project(path: ':calendar')
+    // 刷新框架
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'//没有使用特殊Header，可以不加这行
 }
 
 multiLanguages {

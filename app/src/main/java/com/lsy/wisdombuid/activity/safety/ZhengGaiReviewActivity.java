@@ -23,6 +23,7 @@ import com.lsy.wisdombuid.adapter.RectNoticeAdapter;
 import com.lsy.wisdombuid.adapter.ZhengGaiImgAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
+import com.lsy.wisdombuid.bean.RectifyEntity;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
@@ -49,14 +50,19 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
     //消息列表
     private RecyclerView idListRecycle;
     private RectNoticeAdapter listAdapter;
-
+    private ZhengGaiImgAdapter zgListAdapter;
     //===标段
     private SharedUtils sharedUtils;
-    private TextView tvSectionName, sStation, sGongxu, sUnits;
+    private TextView tvSectionName, sGongxu, sUnits;
 
-    private IRecordData recordData;
+    private RectifyEntity.ItemsBean recordData;
 
-    private TextView sPeople;
+    //
+    private TextView iv_description;
+    private TextView iv_uptime;
+    private TextView iv_zg_description;
+    private RecyclerView rv_zg_url;
+    private TextView iv_plan_time;
 
     private EditText sRecord;
 
@@ -67,8 +73,10 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
     private int type = 3;//3、安全  4、质量
     private String url;
     private List<String> mImgAdapterList = new ArrayList<>();
+    private List<String> mZgImgAdapterList = new ArrayList<>();
     private ZhengGaiImgAdapter mZhengGaiImgAdapter;
     private RecyclerView rv_img;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,7 +95,7 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
 
         type = intent.getIntExtra("type", 1);
         url = intent.getStringExtra("url");
-        L.log("record", "type===" + type);
+        recordData = (RectifyEntity.ItemsBean) intent.getSerializableExtra("data");
 
         initTitle();
 
@@ -103,17 +111,44 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
     }
 
     private void initAdapter() {
-        String substring = url.substring(1, url.length()-1);
+        String substring = url.substring(1, url.length() - 1);
         String[] split = substring.split(",");
         for (String s : split) {
             mImgAdapterList.add(s);
         }
-        mZhengGaiImgAdapter = new ZhengGaiImgAdapter(mImgAdapterList,this);
+        mZhengGaiImgAdapter = new ZhengGaiImgAdapter(mImgAdapterList, this);
         LinearLayoutManager layout = new LinearLayoutManager(this);
         layout.setOrientation(LinearLayoutManager.HORIZONTAL);//设置为横向排列
         rv_img.setLayoutManager(layout);
         rv_img.setAdapter(mZhengGaiImgAdapter);
 
+        String ss = url.substring(1, recordData.getZg_url().length() - 1);
+        String[] strings = substring.split(",");
+        for (String string : strings) {
+            mZgImgAdapterList.add(string);
+        }
+        zgListAdapter = new ZhengGaiImgAdapter(mZgImgAdapterList,this);
+        rv_zg_url.setAdapter(zgListAdapter);
+
+        zgListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String s = mImgAdapterList.get(position);
+                final Dialog dialog = new Dialog(ZhengGaiReviewActivity.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+                ImageView imageView = new ImageView(ZhengGaiReviewActivity.this);
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                Glide.with(ZhengGaiReviewActivity.this)
+                        .load(RequestURL.OssUrl + s)
+                        .into(imageView);
+                dialog.setContentView(imageView);
+                dialog.show();
+            }
+        });
 
         mZhengGaiImgAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -128,7 +163,7 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
                     }
                 });
                 Glide.with(ZhengGaiReviewActivity.this)
-                        .load(RequestURL.OssUrl+s)
+                        .load(RequestURL.OssUrl + s)
                         .into(imageView);
                 dialog.setContentView(imageView);
                 dialog.show();
@@ -138,19 +173,28 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
 
     private void initView() {
 
-        //===
+        iv_description = findViewById(R.id.iv_description);
+        iv_uptime = findViewById(R.id.iv_uptime);
+        iv_zg_description = findViewById(R.id.iv_zg_description);
+        rv_zg_url = findViewById(R.id.rv_zg_url);
+        iv_plan_time = findViewById(R.id.iv_plan_time);
+
+
         idListRecycle = (RecyclerView) findViewById(R.id.recycler_zhenggaitongzhidan);
         idListRecycle.setItemViewCacheSize(100);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(RectificationNoticeActivity.this);
-        idListRecycle.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
+        idListRecycle.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         idListRecycle.setNestedScrollingEnabled(false);
+
+        rv_zg_url = (RecyclerView) findViewById(R.id.rv_zg_url);
+        rv_zg_url.setItemViewCacheSize(100);
+        rv_zg_url.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        rv_zg_url.setNestedScrollingEnabled(false);
 
         //====
         tvSectionName = findViewById(R.id.tv_section_name);
         tvSectionName.setText("" + sharedUtils.getData(SharedUtils.SECTION_NAME, ""));
 
-        sPeople = findViewById(R.id.zhenggai_shangbaoren);
-        sStation = findViewById(R.id.zhenggai_station);
+
         sGongxu = findViewById(R.id.zhenggai_gongxu);
         sUnits = findViewById(R.id.zhenggai_utils);
 
@@ -178,40 +222,20 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
     }
 
     private void initData() {
-        recordData = new IRecordData();
-        Gson gson = new Gson();
 
-        String data = sharedUtils.getData(SharedUtils.IRDETAILS, "");
-
-        if (data != "" || !data.equals("")) {
-            recordData = gson.fromJson(sharedUtils.getData(SharedUtils.IRDETAILS, ""), IRecordData.class);
-            sPeople.setText("" + recordData.getStaff_name());
-            sGongxu.setText("" + recordData.getProcess_name());
-            sStation.setText("" + recordData.getStation_name());
+//            recordData = gson.fromJson(sharedUtils.getData(SharedUtils.IRDETAILS, ""), RectifyEntity.ItemsBean.class);
+        if (recordData != null){
             sUnits.setText("" + recordData.getSub_name());
-        } else {
-            ToastUtils.showBottomToast(ZhengGaiReviewActivity.this, "获取数据失败");
+
+            rv_zg_url = findViewById(R.id.rv_zg_url);
+
+            iv_description.setText(recordData.getDescription());
+            iv_uptime.setText(recordData.getUptime());
+            iv_zg_description.setText(recordData.getZg_description());
+            iv_plan_time.setText(recordData.getPlan_time());
+
         }
 
-        List<String> images = new ArrayList<>();
-
-        L.log("record", "" + recordData.getUrl());
-        if (recordData.getUrl() != null) {
-            try {
-                JSONArray jsonArray = new JSONArray("" + recordData.getUrl());
-
-                for (int i = 0; i < 2; i++) {
-
-                    images.add(jsonArray.get(i).toString());
-
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        listAdapter = new RectNoticeAdapter(ZhengGaiReviewActivity.this, images);
-        idListRecycle.setAdapter(listAdapter);
     }
 
     @Override

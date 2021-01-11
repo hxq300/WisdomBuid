@@ -14,6 +14,7 @@ import com.lsy.wisdombuid.activity.safety.InsRecordDetailsActivity;
 import com.lsy.wisdombuid.activity.safety.ZhengGaiReviewActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
 import com.lsy.wisdombuid.activity.login.LoginActivity;
+import com.lsy.wisdombuid.bean.RectifyEntity;
 import com.lsy.wisdombuid.util.GeneralMethod;
 import com.lsy.wisdombuid.util.SharedUtils;
 import com.lsy.wisdombuid.util.ToastUtils;
@@ -28,13 +29,13 @@ import java.util.List;
 public class InspectionRecordAdapter extends RecyclerView.Adapter {
 
     private Context context;
-    private List<IRecordData> messageList = new ArrayList();
+    private List<RectifyEntity.ItemsBean> messageList = new ArrayList();
     private LayoutInflater inflater;
     private int type;
 
     private SharedUtils sharedUtils;
 
-    public InspectionRecordAdapter(Context context, List<IRecordData> messageList, int type) {
+    public InspectionRecordAdapter(Context context, List<RectifyEntity.ItemsBean> messageList, int type) {
         this.context = context;
         this.messageList = messageList;
         this.type = type;
@@ -70,7 +71,7 @@ public class InspectionRecordAdapter extends RecyclerView.Adapter {
         }
 
         public void bindData(Object item, final int position) {
-            final IRecordData datas = (IRecordData) item;
+            final RectifyEntity.ItemsBean datas = (RectifyEntity.ItemsBean) item;
 
             title.setText("" + datas.getTitle());
             upTime.setText("" + datas.getUptime());
@@ -90,6 +91,7 @@ public class InspectionRecordAdapter extends RecyclerView.Adapter {
                                 Intent intent = new Intent();
                                 intent.putExtra("type", type);
                                 intent.putExtra("url",datas.getUrl());
+                                intent.putExtra("data",messageList.get(position));
                                 intent.setClass(context, ZhengGaiReviewActivity.class);
 
                                 context.startActivity(intent);

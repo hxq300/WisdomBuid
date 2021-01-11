@@ -14,10 +14,14 @@ import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.adapter.InspectionRecordAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.IRecordData;
+import com.lsy.wisdombuid.bean.RectifyEntity;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
 import com.lsy.wisdombuid.util.StatusBarUtil;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,8 +48,9 @@ public class ReviewListActivity extends MyBaseActivity {
     private int intId = 1;//1\查询记录  2、无效数据a
     private int pageNo = 1;
 
-    private List<IRecordData> dataList = new ArrayList<>();
+    private List<RectifyEntity.ItemsBean> dataList = new ArrayList<>();
 
+    private SmartRefreshLayout smartRefreshLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,7 +63,7 @@ public class ReviewListActivity extends MyBaseActivity {
             StatusBarUtil.setStatusBarColor(this, 0xFFA400);
         }
         titleBar = findViewById(R.id.title_bar);
-
+        smartRefreshLayout = findViewById(R.id.smartRefreshLayout);
 
         Intent intent = getIntent();
 
@@ -84,7 +89,7 @@ public class ReviewListActivity extends MyBaseActivity {
 
 //        {"pageNo":1,"pageSize":10,"section_id":2,"station_id":1}
         listcanshu.put("pageNo", pageNo);
-        listcanshu.put("pageSize", 10);
+        listcanshu.put("pageSize", 15);
         listcanshu.put("section_id", OKHttpClass.getToken(ReviewListActivity.this));//标段ID登录返回
         listcanshu.put("station_id", station_id);//站点ID(下拉框里面选的)
 
@@ -95,34 +100,25 @@ public class ReviewListActivity extends MyBaseActivity {
         okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
             @Override
             public String requestData(String dataString) {
-                //请求成功数据回调
-                L.log("safetyInspectionRecord", "record==" + dataString);
+                smartRefreshLayout.finishRefresh();
+                smartRefreshLayout.finishLoadmore();
                 Gson gson = new Gson();
+                RectifyEntity rectifyEntity = gson.fromJson(dataString, RectifyEntity.class);
+                dataList.addAll(rectifyEntity.getItems());
 
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(dataString);
-
-                    JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
-
-                    dataList.clear();
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        IRecordData data = gson.fromJson(jsonArray.get(i).toString(), IRecordData.class);
-
-                        dataList.add(data);
-                    }
                     if (dataList != null && dataList.size() > 0) {
-                        listAdapter = new InspectionRecordAdapter(ReviewListActivity.this, dataList, 3);
-                        idListRecycle.setAdapter(listAdapter);
-                        noData.setVisibility(View.GONE);
+                        if (listAdapter == null){
+                            listAdapter = new InspectionRecordAdapter(ReviewListActivity.this, dataList, 3);
+                            idListRecycle.setAdapter(listAdapter);
+                            noData.setVisibility(View.GONE);
+                        }else {
+                            listAdapter.notifyDataSetChanged();
+                        }
+
                     } else {
                         noData.setVisibility(View.VISIBLE);
                     }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 return dataString;
             }
         });
@@ -138,6 +134,28 @@ public class ReviewListActivity extends MyBaseActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ReviewListActivity.this);
         idListRecycle.setLayoutManager(linearLayoutManager);
         idListRecycle.setNestedScrollingEnabled(false);
+
+
+        // 下拉刷新
+        smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(com.scwang.smartrefresh.layout.api.RefreshLayout refreshlayout) {
+                dataList.clear();
+                pageNo = 1;
+                getRecord();
+            }
+        });
+
+
+        // 上拉加载更多
+        smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(com.scwang.smartrefresh.layout.api.RefreshLayout refreshlayout) {
+                // 加载回调
+                pageNo++;
+                getRecord();
+            }
+        });
     }
 
     @Override
