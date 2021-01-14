@@ -75,10 +75,16 @@ public class FlashActivity extends BaseActivity {
             @Override
             public String requestData(String dataString) {
                 Gson gson = new Gson();
-                ImmediatelyGpsLoginEntity immediatelyGpsLoginEntity = gson.fromJson(dataString, ImmediatelyGpsLoginEntity.class);
-                SharedUtils sharedUtils = new SharedUtils(FlashActivity.this, SharedUtils.WISDOM);
-                sharedUtils.setData(sharedUtils.GPS, immediatelyGpsLoginEntity.getData().getToken());//标段ID
-                sharedUtils.setData(sharedUtils.GPS_USER_ID, immediatelyGpsLoginEntity.getData().getUserId());//标段ID
+                try {
+                    ImmediatelyGpsLoginEntity immediatelyGpsLoginEntity = gson.fromJson(dataString, ImmediatelyGpsLoginEntity.class);
+
+                    SharedUtils sharedUtils = new SharedUtils(FlashActivity.this, SharedUtils.WISDOM);
+                    sharedUtils.setData(sharedUtils.GPS, immediatelyGpsLoginEntity.getData().getToken());//标段ID
+                    sharedUtils.setData(sharedUtils.GPS_USER_ID, immediatelyGpsLoginEntity.getData().getUserId());//标段ID
+                } catch (Exception e) {
+                }
+
+
                 return dataString;
             }
         });
