@@ -111,8 +111,10 @@ public class GPSActivity extends MyBaseActivity {
             okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
                 @Override
                 public String requestData(String dataString) {
-                    Gson gson = new Gson();
+                    if (dataString.length() < 100)
+                        return dataString;
                     try {
+                        Gson gson = new Gson();
                         CarGpsMessageEntity carGpsMessageEntity = gson.fromJson(dataString, CarGpsMessageEntity.class);
                         List<CarGpsMessageEntity.DataBean> data = carGpsMessageEntity.getData();
                         mBaiduMap.clear();

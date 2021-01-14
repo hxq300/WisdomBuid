@@ -74,10 +74,11 @@ public class FlashActivity extends BaseActivity {
         okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
             @Override
             public String requestData(String dataString) {
-                Gson gson = new Gson();
+                if (dataString.length() <100)
+                    return dataString;
                 try {
+                    Gson gson = new Gson();
                     ImmediatelyGpsLoginEntity immediatelyGpsLoginEntity = gson.fromJson(dataString, ImmediatelyGpsLoginEntity.class);
-
                     SharedUtils sharedUtils = new SharedUtils(FlashActivity.this, SharedUtils.WISDOM);
                     sharedUtils.setData(sharedUtils.GPS, immediatelyGpsLoginEntity.getData().getToken());//标段ID
                     sharedUtils.setData(sharedUtils.GPS_USER_ID, immediatelyGpsLoginEntity.getData().getUserId());//标段ID
