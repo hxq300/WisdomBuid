@@ -47,6 +47,7 @@ public class StatusBarUtil {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //使用SystemBarTintManager,需要先将状态栏设置为透明
             setTranslucentStatus(activity);
+
             SystemBarTintManager systemBarTintManager = new SystemBarTintManager(activity);
             systemBarTintManager.setStatusBarTintEnabled(true);//显示状态栏
             systemBarTintManager.setStatusBarTintColor(colorId);//设置状态栏颜色
@@ -83,7 +84,7 @@ public class StatusBarUtil {
 
 
     /**
-     *  代码实现android:fitsSystemWindows
+     * 代码实现android:fitsSystemWindows
      *
      * @param activity
      */
@@ -124,7 +125,7 @@ public class StatusBarUtil {
     /**
      * 设置 状态栏深色浅色切换
      */
-    public static boolean setStatusBarFontIconDark(Activity activity, @ViewType int type,boolean dark) {
+    public static boolean setStatusBarFontIconDark(Activity activity, @ViewType int type, boolean dark) {
         switch (type) {
             case TYPE_MIUI:
                 return setMiuiUI(activity, dark);
@@ -132,7 +133,7 @@ public class StatusBarUtil {
                 return setFlymeUI(activity, dark);
             case TYPE_M:
             default:
-                return setCommonUI(activity,dark);
+                return setCommonUI(activity, dark);
         }
     }
 
@@ -203,6 +204,7 @@ public class StatusBarUtil {
             return false;
         }
     }
+
     //获取状态栏高度
     public static int getStatusBarHeight(Context context) {
         int result = 0;

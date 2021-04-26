@@ -147,18 +147,18 @@ public class OKHttpClass {
         PostKeyValue(url, listcanshu);
     }
 
-    public void setPostNoToken(String url,Object listcanshu){
+    public void setPostNoToken(String url, Object listcanshu) {
         PostKeyValue(url, listcanshu);
     }
 
-    public void setPostYesToken(Context context,String resUrl, String token, Object listcanshu,String cars) {
+    public void setPostYesToken(Context context, String resUrl, String token, Object listcanshu, String cars) {
         if (token == null) {
             token = "";
         }
         SharedUtils sharedUtils = new SharedUtils(context, SharedUtils.WISDOM);
-        String url = resUrl +"&token=" +token;
-        if (resUrl.equals("http://www.gpsnow.net/carStatus/getByCarIds.do?")){
-            url  = url +"&userId="+sharedUtils.getIntData(SharedUtils.GPS_USER_ID)+ "&carIds="+cars;
+        String url = resUrl + "&token=" + token;
+        if (resUrl.equals("http://www.gpsnow.net/carStatus/getByCarIds.do?")) {
+            url = url + "&userId=" + sharedUtils.getIntData(SharedUtils.GPS_USER_ID) + "&carIds=" + cars;
         }
 
         PostKeyValue(url, listcanshu);
@@ -251,7 +251,10 @@ public class OKHttpClass {
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8")
                 , new Gson().toJson(listcanshu));
 
-        Request request = new Request.Builder().url(urlPath).post(requestBody).build();
+        Request request = new Request.Builder()
+                .url(urlPath)
+                .post(requestBody)
+                .build();
 
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -321,9 +324,10 @@ public class OKHttpClass {
 
     /**
      * get请求 暴力请求
+     *
      * @param urlPath
      */
-    public void DoGet2(String urlPath){
+    public void DoGet2(String urlPath) {
         OkHttpClient okHttpClient = OkHttpManager.getInstance().getOkHttpClient();
         //2、构建Request
         Request.Builder builder = new Request.Builder();
@@ -348,6 +352,7 @@ public class OKHttpClass {
             }
         });
     }
+
     /**
      * 使用okhttp发送get请求
      * todo :此处有修改 单例OkHttpClient

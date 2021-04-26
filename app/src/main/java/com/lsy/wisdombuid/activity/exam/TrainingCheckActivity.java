@@ -91,7 +91,7 @@ public class TrainingCheckActivity extends MyBaseActivity implements ExamInterfa
 
         switch (view.getId()) {
 
-            case R.id.test_record://考试记录
+            case R.id.record_cv://考试记录
                 Intent record = new Intent(TrainingCheckActivity.this, TestRecordsActivity.class);
                 startActivity(record);
                 break;
@@ -104,24 +104,19 @@ public class TrainingCheckActivity extends MyBaseActivity implements ExamInterfa
                 startActivity(testNow);
                 break;
 
-            case R.id.test_join_test://参加考试
+            case R.id.exam_cv://参加考试
                 Intent joinTest = new Intent(TrainingCheckActivity.this, JoinTestActivity.class);
                 startActivity(joinTest);
                 break;
 
-            case R.id.test_my_grade://我的成绩
+            case R.id.result_cv://我的成绩
                 Intent myGrade = new Intent(TrainingCheckActivity.this, MyGradeActivity.class);
                 startActivity(myGrade);
                 break;
 
-            case R.id.test_peixun_courses://培训课程
+            case R.id.train_cv://培训课程
                 Intent courses = new Intent(TrainingCheckActivity.this, TrainingCoursesActivity.class);
                 startActivity(courses);
-                break;
-
-            case R.id.test_update_image://上传图片
-                Intent upImage = new Intent(TrainingCheckActivity.this, UpdatePictureActivity.class);
-                startActivity(upImage);
                 break;
 
 
