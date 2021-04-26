@@ -25,6 +25,7 @@ import com.lsy.wisdombuid.R;
 
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.CarGpsMessageEntity;
+import com.lsy.wisdombuid.bean.CarIdEntity;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.util.SharedUtils;
 import com.lsy.wisdombuid.util.StatusBarUtil;
@@ -50,7 +51,7 @@ public class GPSActivity extends MyBaseActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
-                    getGPSMessage("161328,161329,161330,161331,161332,161333");
+                    getCarIds();
                     break;
             }
         }
@@ -59,6 +60,8 @@ public class GPSActivity extends MyBaseActivity {
     private BaiduMap mBaiduMap;
     private Timer mTimer;
     private TitleBar titleBar;
+
+    private String carIds = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,15 +101,51 @@ public class GPSActivity extends MyBaseActivity {
 
     }
 
-    // 根据 车辆carId 获取 车辆的坐标
-    private void getGPSMessage(String id) {
+    /**
+     * 获取 car id
+     */
+
+    private void  getCarIds(){
         SharedUtils sharedUtils = new SharedUtils(this, SharedUtils.WISDOM);
         String token = sharedUtils.getData(SharedUtils.GPS);
         if (null != token && !"".equals(token)) {
             Map<String, Object> listcanshu = new HashMap<>();
             OKHttpClass okHttpClass = new OKHttpClass();
             //设置请求类型、地址和参数
-            okHttpClass.setPostYesToken(this, "http://www.gpsnow.net/carStatus/getByCarIds.do?", token, listcanshu);
+            okHttpClass.setPostYesToken(this, "http://www.gpsnow.net/car/getByUserId.do?", token, listcanshu,carIds);
+
+            okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
+                @Override
+                public String requestData(String dataString) {
+                    Gson gson = new Gson();
+                    CarIdEntity carIdEntity = gson.fromJson(dataString, CarIdEntity.class);
+                    for (int i = 0; i < carIdEntity.getData().size(); i++) {
+                        if (i == carIdEntity.getData().size() - 1){
+                            carIds = carIds+carIdEntity.getData().get(i).getCarId();
+                        }else {
+                            carIds = carIds+carIdEntity.getData().get(i).getCarId()+",";
+                        }
+                    }
+                    Log.d("testTest", "requestData: " + carIds);
+                    getGPSMessage(carIds);
+                    return dataString;
+                }
+            });
+        }
+    }
+
+    // 根据 车辆carId 获取 车辆的坐标
+    private void getGPSMessage(String id) {
+        SharedUtils sharedUtils = new SharedUtils(this, SharedUtils.WISDOM);
+        String token = sharedUtils.getData(SharedUtils.GPS);
+        int userId = sharedUtils.getIntData(SharedUtils.GPS_USER_ID);
+        if (null != token && !"".equals(token)) {
+            Map<String, Object> listcanshu = new HashMap<>();
+            listcanshu.put("userId",userId+"");
+            listcanshu.put("carIds",id);
+            OKHttpClass okHttpClass = new OKHttpClass();
+            //设置请求类型、地址和参数
+            okHttpClass.setPostYesToken(this, "http://www.gpsnow.net/carStatus/getByCarIds.do?", token, listcanshu,carIds);
 
             okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
                 @Override

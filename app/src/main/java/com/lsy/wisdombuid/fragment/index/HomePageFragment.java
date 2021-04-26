@@ -70,6 +70,7 @@ public class HomePageFragment extends MyFragment {
 
     private int jobID = 0;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -99,13 +100,14 @@ public class HomePageFragment extends MyFragment {
     private void initView() {
 
         lineSearch = view.findViewById(R.id.home_line_search);
-
         rateRecycle = (RecyclerView) view.findViewById(R.id.id_rate_recycler);
         rateRecycle.setItemViewCacheSize(100);
         rateRecycle.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
         rateRecycle.setNestedScrollingEnabled(false);
 
         lineSearch.getBackground().mutate().setAlpha(98);
+
+
 
     }
 
@@ -118,7 +120,7 @@ public class HomePageFragment extends MyFragment {
         btnDataLists.add(new HomeBtnData.BtnData(5, "培训考核", "main_peixun.png"));
         btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", "main_anquantiyan.png"));
         btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
-        btnDataLists.add(new HomeBtnData.BtnData(200, "车辆定位", ""));
+//        btnDataLists.add(new HomeBtnData.BtnData(200, "车辆定位", ""));
         rateAdapter = new RateAdapter(getActivity(), btnDataLists);
         rateRecycle.setAdapter(rateAdapter);
         adapterSetOnClick(rateAdapter);

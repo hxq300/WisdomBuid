@@ -253,7 +253,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         context.startActivity(intent);
     }
 
-    //首页点击事件
+    // TODO 首页点击事件
     public void indexBtn(View view) {
         switch (view.getId()) {
 

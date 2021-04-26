@@ -61,7 +61,7 @@ public class FlashActivity extends BaseActivity {
 
         initView();
         // 立即定位登录
-        loginImmediatelyGps();
+//        loginImmediatelyGps();
     }
 
     private void loginImmediatelyGps() {
@@ -69,7 +69,7 @@ public class FlashActivity extends BaseActivity {
         OKHttpClass okHttpClass = new OKHttpClass();
 
         //设置请求类型、地址和参数
-        okHttpClass.setPostNoToken("http://www.gpsnow.net/user/login.do?name=pxgs2020&password=a12345", listcanshu);
+        okHttpClass.setPostNoToken("http://www.gpsnow.net/user/login.do?name=pxgs2020&password=a123456", listcanshu);
 
         okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
             @Override

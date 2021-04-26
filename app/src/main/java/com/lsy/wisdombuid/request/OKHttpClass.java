@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -150,12 +151,16 @@ public class OKHttpClass {
         PostKeyValue(url, listcanshu);
     }
 
-    public void setPostYesToken(Context context,String resUrl, String token, Object listcanshu) {
+    public void setPostYesToken(Context context,String resUrl, String token, Object listcanshu,String cars) {
         if (token == null) {
             token = "";
         }
         SharedUtils sharedUtils = new SharedUtils(context, SharedUtils.WISDOM);
-        String url = resUrl +"&token=" +token+"&userId="+sharedUtils.getIntData(SharedUtils.GPS_USER_ID)+"&carIds=161328,161329,161330,161331,161332,161333";
+        String url = resUrl +"&token=" +token;
+        if (resUrl.equals("http://www.gpsnow.net/carStatus/getByCarIds.do?")){
+            url  = url +"&userId="+sharedUtils.getIntData(SharedUtils.GPS_USER_ID)+ "&carIds="+cars;
+        }
+
         PostKeyValue(url, listcanshu);
     }
 

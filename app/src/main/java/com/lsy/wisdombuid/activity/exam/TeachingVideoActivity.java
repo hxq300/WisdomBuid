@@ -83,6 +83,7 @@ public class TeachingVideoActivity extends BaseActivity implements View.OnClickL
 
     /**
      * 初始化视频部分
+     *
      */
     private void initVideo(String imgUrl,String videoUrl) {
         gsy_player.setUp(videoUrl,true,"");
