@@ -109,7 +109,7 @@ public class WeatherDataEntity {
         private String wea;
         private String wea_img;
         private int air;
-        private int humidity;
+        private String humidity;
         private String air_level;
         private String air_tips;
         private AlarmBean alarm;
@@ -169,11 +169,11 @@ public class WeatherDataEntity {
             this.air = air;
         }
 
-        public int getHumidity() {
+        public String getHumidity() {
             return humidity;
         }
 
-        public void setHumidity(int humidity) {
+        public void setHumidity(String humidity) {
             this.humidity = humidity;
         }
 

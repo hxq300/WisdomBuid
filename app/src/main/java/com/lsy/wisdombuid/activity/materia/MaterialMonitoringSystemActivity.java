@@ -1,6 +1,7 @@
 package com.lsy.wisdombuid.activity.materia;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.gson.Gson;
 import com.lsy.wisdombuid.R;
 import com.lsy.wisdombuid.activity.PersonnelManagementActivity;
 import com.lsy.wisdombuid.adapter.JianCeAdapter;
@@ -20,7 +22,9 @@ import com.lsy.wisdombuid.adapter.RateAdapter;
 import com.lsy.wisdombuid.adapter.ZhandianAdapter;
 import com.lsy.wisdombuid.base.MyBaseActivity;
 import com.lsy.wisdombuid.bean.DeviceData;
+import com.lsy.wisdombuid.bean.MaterialMonitoringSystemBean;
 import com.lsy.wisdombuid.bean.MonitorgSysEntity;
+import com.lsy.wisdombuid.bean.RebarEntity;
 import com.lsy.wisdombuid.bean.StationData;
 import com.lsy.wisdombuid.bean.WeatherDataEntity;
 import com.lsy.wisdombuid.mvp.jiancesys.MonitorgSysInterface;
@@ -33,7 +37,9 @@ import com.lsy.wisdombuid.util.ToastUtils;
 import com.lsy.wisdombuid.util.net.OkHttpManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
@@ -50,13 +56,14 @@ public class MaterialMonitoringSystemActivity extends MyBaseActivity implements 
     private LinearLayout lineZhandain;
     private PopupWindow popupWindow;
     private TextView zhandianName;
-    private TextView tv_pm25,tv_pm10,tv_noise,tv_tem,tv_hum,tv_wp,tv_ws,tv_wd,tv_tsp,tv_atm
-            ,tv_date_week,tv_wea,tv_air_level,tv_air_tips,tv_win_speed,tv_name;
+    private TextView tv_pm25, tv_pm10, tv_noise, tv_tem, tv_hum, tv_wp, tv_ws, tv_wd, tv_tsp, tv_atm, tv_date_week, tv_wea, tv_air_level, tv_air_tips, tv_win_speed, tv_name;
     List<StationData> popuDatas = new ArrayList<>();
 
     //=====
     private RecyclerView rateRecycle;
     private JianCeAdapter rateAdapter;
+
+    private static final String TAG = "MaterialMonitoringSyste";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,10 +90,42 @@ public class MaterialMonitoringSystemActivity extends MyBaseActivity implements 
     }
 
     private void getWeatherDate() {
-        OkHttpClient okHttpClient = OkHttpManager.getInstance().getOkHttpClient();
-        //2、构建Request
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.get().url(RequestURL.weatherUrl).build();
+//        OkHttpClient okHttpClient = OkHttpManager.getInstance().getOkHttpClient();
+//        //2、构建Request
+//        Request.Builder builder = new Request.Builder();
+//        Request request = builder.get().url(RequestURL.weatherUrl).build();
+        int mId = 21043007;
+        Map<String, Object> listcanshu = new HashMap<>();
+        OKHttpClass okHttpClass = new OKHttpClass();
+        listcanshu.put("deviceId", mId);
+        okHttpClass.setPostCanShu(this, RequestURL.materialMonitoringSystem, listcanshu);
+        okHttpClass.setGetIntenetData(new OKHttpClass.GetData() {
+          //  {"id":0,  "pm25":"43",  "pm10":"54",  "noise":"66",  "tem":"23.1",
+          //  "hum":"58.0",  "wp":"2",  "ws":"1.2", "wd":"东南风",  "tsp":"95"}
+            @Override
+            public String requestData(String dataString) {
+                Log.d(TAG, "requestData:+++++======= "+dataString);
+                if (!"".equals(dataString)){
+                    Gson gson = new Gson();
+                    MaterialMonitoringSystemBean requestGsonData = gson.fromJson(dataString, MaterialMonitoringSystemBean.class);
+                    if (null!=requestGsonData){
+                        if (requestGsonData.getCode()==200){
+                            Log.d(TAG, "requestData: +++++====="+requestGsonData.getCode());
+                            tv_pm25.setText(requestGsonData.getData().getPm25()+"");
+                            tv_pm10.setText(requestGsonData.getData().getPm10()+"");
+                            tv_noise.setText(requestGsonData.getData().getNoise()+"");
+                            tv_tem .setText(requestGsonData.getData().getTem()+"");
+                            tv_hum .setText(requestGsonData.getData().getHum()+"");
+                            tv_wp .setText(requestGsonData.getData().getWp()+"");
+                            tv_ws .setText(requestGsonData.getData().getWs()+"");
+                            tv_wd .setText(requestGsonData.getData().getWd()+"");
+                            tv_tsp .setText(requestGsonData.getData().getTsp()+"");
+                        }
+                    }
+                }
+                return dataString;
+            }
+        });
 
     }
 
@@ -112,7 +151,7 @@ public class MaterialMonitoringSystemActivity extends MyBaseActivity implements 
         tv_win_speed = findViewById(R.id.tv_win_speed);
 
         tv_name = findViewById(R.id.tv_name);
-        tv_name.setText(""+sharedUtils.getData(SharedUtils.SECTION_NAME, ""));
+        tv_name.setText("" + sharedUtils.getData(SharedUtils.SECTION_NAME, ""));
 
         lineZhandain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,11 +204,12 @@ public class MaterialMonitoringSystemActivity extends MyBaseActivity implements 
 
     /**
      * 物料检测数据 回调成功
+     *
      * @param dataBeans
      */
     @Override
     public void setMonotorgSysEntity(MonitorgSysEntity.DataBean dataBeans) {
-        if (dataBeans!=null){
+        if (dataBeans != null) {
             tv_pm25.setText(dataBeans.getPm25());
             tv_pm10.setText(dataBeans.getPm10());
             tv_noise.setText(dataBeans.getNoise());
@@ -185,7 +225,7 @@ public class MaterialMonitoringSystemActivity extends MyBaseActivity implements 
 
     @Override
     public void setWeatherData(WeatherDataEntity.DataBean weatherData) {
-        tv_date_week.setText(weatherData.getDate()+"("+weatherData.getWeek()+")");
+        tv_date_week.setText(weatherData.getDate() + "(" + weatherData.getWeek() + ")");
         tv_wea.setText(weatherData.getWea());
         tv_air_level.setText(weatherData.getAir_level());
         tv_win_speed.setText(weatherData.getWin_speed());

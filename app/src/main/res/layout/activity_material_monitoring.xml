@@ -21,6 +21,7 @@
         android:textSize="15sp" />
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/safety_line_zhandian"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
@@ -463,6 +464,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_70"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <LinearLayout

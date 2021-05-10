@@ -65,7 +65,7 @@
                     android:text="质量问题"
                     android:textColor="@color/six"
                     android:textSize="12sp"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
 
             </RadioGroup>

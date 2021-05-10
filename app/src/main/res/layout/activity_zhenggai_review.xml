@@ -58,10 +58,11 @@
             android:text="隐患图片："
             android:textColor="@color/six"
             android:textSize="14sp" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_img"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_120"/>
+            android:layout_height="@dimen/dp_120" />
 
     </LinearLayout>
 

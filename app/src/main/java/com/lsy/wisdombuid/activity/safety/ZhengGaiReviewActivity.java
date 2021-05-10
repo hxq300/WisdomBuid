@@ -127,6 +127,7 @@ public class ZhengGaiReviewActivity extends MyBaseActivity {
         for (String string : strings) {
             mZgImgAdapterList.add(string);
         }
+
         zgListAdapter = new ZhengGaiImgAdapter(mZgImgAdapterList,this);
         rv_zg_url.setAdapter(zgListAdapter);
 

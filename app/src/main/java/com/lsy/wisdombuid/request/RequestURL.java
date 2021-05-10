@@ -6,9 +6,9 @@ package com.lsy.wisdombuid.request;
  */
 public class RequestURL {
     // 测试服
-//    public static String RequestUrl = "http://192.168.1.103:8891";
+   public static String RequestUrl = "http://192.168.1.103:8891";
     // 正式服
-    public static String RequestUrl = "http://101.132.154.10:8891";
+   // public static String RequestUrl = "http://101.132.154.10:8891";
 
     public static String RequestImg = "http://101.132.154.10:8891/img/download_img?img_url=";
     public static String OssUrl = "http://jjjt.oss-cn-shanghai.aliyuncs.com/";
@@ -26,7 +26,9 @@ public class RequestURL {
 
     // 物料检测
     public static String materialMonitoringSystem = RequestUrl+ "/Environment/FindEnvironment?";// 查询最近一条扬尘检测仪数据
-    public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101181410";// 一周天气详情
+
+ //   public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101181410";// 一周天气详情
+    public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101180805";// 一周天气详情
 
 
     //安全管理系统
@@ -100,6 +102,28 @@ public class RequestURL {
     //---------安全管理内部的统计图
     public static String safetyType = RequestUrl + "/count_App/CountRiskshowByRiskId?"; //根据安全隐患类型查询数量总数
     public static String safetyUnit = RequestUrl + "/count_App/CountRiskshowBySubId?"; //根据分包单位查询安全隐患数量总数
+
+    // 存梁
+    public static String FindStorageGirderById = RequestUrl + "/StorageGirder/FindStorageGirderById?"; //根据id查询存梁区信息
+    public static String FindGirderByUptime = RequestUrl + "/Girder/FindGirderByUptime?"; //查询存梁区信息(手机)
+    public static String UpdateStorageGirder = RequestUrl + "/StorageGirder/UpdateStorageGirder?"; //查询存梁区信息(手机)
+
+    //钢琴
+    public static String FindRebarById = RequestUrl + "/Rebar/FindRebarById?"; // 根据id查询钢筋绑扎区信息
+    public static String FindRebar = RequestUrl + "/Rebar/FindRebar?"; // 根据id查询钢筋绑扎区信息
+    public static String UpdateState = RequestUrl + "/Rebar/UpdateState?"; // 修改钢筋绑扎区信息
+
+    //制梁
+    public static String FindManufactureGirderById = RequestUrl + "/ManufactureGirder/FindManufactureGirderById?"; //根据id查询制梁区信息
+    public static String FindManufactureGirder = RequestUrl + "/ManufactureGirder/FindManufactureGirder?"; //查询制梁区信息
+    public static String UpdateManufactureGirder = RequestUrl + "/ManufactureGirder/UpdateManufactureGirder?"; //修改制梁区信息
+
+
+
+
+
+
+
 
 
 

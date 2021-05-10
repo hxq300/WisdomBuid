@@ -119,7 +119,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
      */
     private ArrayList<MyFragment> getFragments() {
         ArrayList<MyFragment> fragments = new ArrayList<>();
-
+//        HomePageFragment homePageFragment = HomePageFragment.newInstance();
+//        homePageFragment.setIntentIntegrator(new IntentIntegrator(MainActivity.this));
+//        fragments.add(homePageFragment);
         fragments.add(HomePageFragment.newInstance());
         fragments.add(MoreFragment.newInstance());
         fragments.add(MineFragment.newInstance());
@@ -279,7 +281,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             final String qrContent = scanResult.getContents();
             L.log("scan", "扫描结果" + qrContent);
 
-
             //{"type":1,"id":1}
             Gson gson = new Gson();
 
@@ -314,7 +315,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
 
         }
+        else if (requestCode == 1002) {
+            IntentResult scanResult = IntentIntegrator.parseActivityResult(resultCode, data);
+            final String qrContent = scanResult.getContents();
+            L.log("scan", "扫描结果" + qrContent);
 
+            Gson gson = new Gson();
+
+            if (qrContent != null) {
+                try {
+                    JSONObject jsonObject = new JSONObject(qrContent);
+                    int type = jsonObject.getInt("type");
+                    int id = jsonObject.getInt("id");
+                    if (type == 1) { // 存梁区
+                        Intent intent = new Intent(this, SaveBeamActivity.class);
+                        intent.putExtra("id", id);
+                        startActivity(intent);
+                    } else if (type == 2) { //钢筋
+                        Intent intent = new Intent(this, RebarActivity.class);
+                        intent.putExtra("id", id);
+                        startActivity(intent);
+                    } else if (type == 3) {//制梁
+                        Intent intent = new Intent(this, FabricateBeamActivity.class);
+                        intent.putExtra("id", id);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }
     }
 
     /**

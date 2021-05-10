@@ -70,17 +70,17 @@ public class RateAdapter extends RecyclerView.Adapter {
             final HomeBtnData.BtnData datas = (HomeBtnData.BtnData) item;
 
             idText.setText(datas.getTitle_name());
-            if (((HomeBtnData.BtnData) item).getId() == 100){
-                Glide.with(context).load(R.mipmap.safety_daizhenggai).into(icon);
-            }
-            else if (((HomeBtnData.BtnData) item).getId() == 200){
-                Glide.with(context).load(R.mipmap.gps_icon).into(icon);
-            }
-            else {
-                Glide.with(context).load(RequestURL.RequestImg + datas.getTitle_img()).into(icon);
-            }
+//            if (((HomeBtnData.BtnData) item).getId() == 100){
+//                Glide.with(context).load(R.mipmap.safety_daizhenggai).into(icon);
+//            }
+//            else if (((HomeBtnData.BtnData) item).getId() == 200){
+//                Glide.with(context).load(R.mipmap.gps_icon).into(icon);
+//            }
+//            else {
+//                Glide.with(context).load(RequestURL.RequestImg + datas.getTitle_img()).into(icon);
+//            }
 
-
+                Glide.with(context).load(datas.getTitle_img()).into(icon);
             lineType.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

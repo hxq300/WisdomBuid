@@ -32,6 +32,7 @@ import java.util.Map;
  */
 public class MonitorgSysModel implements MonitorgSysInterface.Model {
 
+    private static final String TAG = "MonitorgSysModel";
     private MonitorgSysInterface.Presenter presenter;
     private Context context;
 
@@ -158,7 +159,10 @@ public class MonitorgSysModel implements MonitorgSysInterface.Model {
             @Override
             public String requestData(String dataString) {
                 Gson gson = new Gson();
+                Log.d(TAG, "requestData: "+dataString);
+
                 WeatherDataEntity weatherDataEntity = gson.fromJson(dataString, WeatherDataEntity.class);
+
                 if (weatherDataEntity.getData()!=null && weatherDataEntity.getData().size()!=0 )
                 presenter.responseWeatherData(weatherDataEntity.getData().get(0));
                 return dataString;

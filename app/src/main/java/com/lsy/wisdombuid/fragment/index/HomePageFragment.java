@@ -14,10 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.google.gson.Gson;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.lsy.wisdombuid.R;
-import com.lsy.wisdombuid.activity.MainActivity;
+import com.lsy.wisdombuid.activity.FabricateBeamActivity;
+import com.lsy.wisdombuid.activity.FactoryManagementActivity;
 import com.lsy.wisdombuid.activity.OnlineSignatureActivity;
 import com.lsy.wisdombuid.activity.PersonnelManagementActivity;
+import com.lsy.wisdombuid.activity.RebarActivity;
+import com.lsy.wisdombuid.activity.SaveBeamActivity;
 import com.lsy.wisdombuid.activity.exam.TrainingCheckActivity;
 import com.lsy.wisdombuid.activity.integral.CreditsExchangeActivity;
 import com.lsy.wisdombuid.activity.materia.MaterialMonitoringSystemActivity;
@@ -25,16 +30,13 @@ import com.lsy.wisdombuid.activity.persion.ExperienceRecordActivity;
 import com.lsy.wisdombuid.activity.progress.ScheduleControlActivity;
 import com.lsy.wisdombuid.activity.quality.QMSActivity;
 import com.lsy.wisdombuid.activity.safety.AfterRectificationActivity;
-import com.lsy.wisdombuid.activity.safety.GPSActivity;
 import com.lsy.wisdombuid.activity.safety.SafetyManagementActivity;
 import com.lsy.wisdombuid.adapter.RateAdapter;
 import com.lsy.wisdombuid.bean.HomeBtnData;
-import com.lsy.wisdombuid.bean.UserData;
 import com.lsy.wisdombuid.fragment.MyFragment;
+import com.lsy.wisdombuid.qr.QRActivity;
 import com.lsy.wisdombuid.request.OKHttpClass;
-import com.lsy.wisdombuid.request.RJYunUrl;
 import com.lsy.wisdombuid.request.RequestURL;
-import com.lsy.wisdombuid.request.Request_CanShu;
 import com.lsy.wisdombuid.tools.L;
 import com.lsy.wisdombuid.util.SharedUtils;
 import com.lsy.wisdombuid.util.ToastUtils;
@@ -71,6 +73,12 @@ public class HomePageFragment extends MyFragment {
     private int jobID = 0;
 
 
+//    private IntentIntegrator intentIntegrator;
+//
+//    public void setIntentIntegrator(IntentIntegrator intentIntegrator) {
+//        this.intentIntegrator = intentIntegrator;
+//    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -87,6 +95,7 @@ public class HomePageFragment extends MyFragment {
 
         SharedPreferences share = getActivity().getSharedPreferences(SharedUtils.WISDOM, getActivity().MODE_PRIVATE);
         jobID = share.getInt(SharedUtils.JOB_ID, 0);
+
         initView();
         initBanner();
 
@@ -108,19 +117,20 @@ public class HomePageFragment extends MyFragment {
         lineSearch.getBackground().mutate().setAlpha(98);
 
 
-
     }
 
     private void initBtn() {
         List<HomeBtnData.BtnData> btnDataLists = new ArrayList<>();
-        btnDataLists.add(new HomeBtnData.BtnData(1, "人员管理", "main_renyuanguanli.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(2, "安全管理", "main_anquanguanli.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(3, "物料监测", "main_wuliaojiancce.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(4, "积分兑换", "main_jifen.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(5, "培训考核", "main_peixun.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", "main_anquantiyan.png"));
-        btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
-//        btnDataLists.add(new HomeBtnData.BtnData(200, "车辆定位", ""));
+
+        btnDataLists.add(new HomeBtnData.BtnData(1, "人员管理", R.mipmap.main_renyuanguanli));
+        btnDataLists.add(new HomeBtnData.BtnData(2, "安全管理", R.mipmap.main_anquanguanli));
+        btnDataLists.add(new HomeBtnData.BtnData(3, "物料监测", R.mipmap.main_wuliaojiancce));
+        btnDataLists.add(new HomeBtnData.BtnData(4, "积分兑换", R.mipmap.main_jifen));
+        btnDataLists.add(new HomeBtnData.BtnData(5, "培训考核", R.mipmap.main_peixun));
+        //btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", R.mipmap.main_anquanguanli));
+        btnDataLists.add(new HomeBtnData.BtnData(6, "质量管理", R.mipmap.main_zhiliangguanli));
+        //btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", R.mipmap.main_zhenggaishangbao));
+        btnDataLists.add(new HomeBtnData.BtnData(200, "厂区管理", R.mipmap.main_changquguanli));
         rateAdapter = new RateAdapter(getActivity(), btnDataLists);
         rateRecycle.setAdapter(rateAdapter);
         adapterSetOnClick(rateAdapter);
@@ -130,41 +140,67 @@ public class HomePageFragment extends MyFragment {
         rateAdapter.setOnClick(new RateAdapter.OnClick() {
             @Override
             public void zixunNow(int position) {
-                switch (position){
+                switch (position) {
                     case 1:
+                        //人员管理
                         Intent renyuan = new Intent(getContext(), PersonnelManagementActivity.class);
                         startActivity(renyuan);
                         break;
                     case 2:
+                        // 安全管理系统
                         Intent guanli = new Intent(getContext(), SafetyManagementActivity.class);
                         startActivity(guanli);
                         break;
                     case 3:
+                        //物料监测系统
                         Intent materia = new Intent(getContext(), MaterialMonitoringSystemActivity.class);
                         startActivity(materia);
                         break;
                     case 4:
+                        //积分兑换
                         Intent jifen = new Intent(getContext(), CreditsExchangeActivity.class);
                         startActivity(jifen);
                         break;
                     case 5:
+                        //培训考核
                         Intent peixun = new Intent(getContext(), TrainingCheckActivity.class);
                         startActivity(peixun);
                         break;
                     case 6:
-                        Intent tiyan = new Intent(getContext(), ExperienceRecordActivity.class);
-                        startActivity(tiyan);
+//                        //体验记录
+//                        Intent tiyan = new Intent(getContext(), ExperienceRecordActivity.class);
+//                        startActivity(tiyan);
+//                        break;
+
+                        //质量管理系统
+                        Intent zhiliangguanli = new Intent(getContext(), QMSActivity.class);
+                        startActivity(zhiliangguanli);
                         break;
-                    case 100:
-                        Intent daizhenggai = new Intent();
-                        daizhenggai.putExtra("stationnId", 1);
-                        daizhenggai.setClass(getContext(), AfterRectificationActivity.class);
-                        startActivity(daizhenggai);
-                        break;
-                    case 200: // 车辆定位
-                        Intent intent = new Intent();
-                        intent.setClass(getContext(), GPSActivity.class);
-                        startActivity(intent);
+
+//                    case 100:
+//                        //待整改
+//                        Intent daizhenggai = new Intent();
+//                        daizhenggai.putExtra("stationnId", 1);
+//                        daizhenggai.setClass(getContext(), AfterRectificationActivity.class);
+//                        startActivity(daizhenggai);
+//                        break;
+                    case 200:
+                        // 厂区管理
+//                        if (null != intentIntegrator) {
+//                          //  IntentIntegrator integrator = new IntentIntegrator();
+//                            intentIntegrator.setOrientationLocked(false);
+//                            intentIntegrator.setCaptureActivity(QRActivity.class); // 设置自定义的activity是QRActivity
+//                            intentIntegrator.setRequestCode(1002);
+//                            intentIntegrator.initiateScan();
+//                            //intentIntegrator.forSupportFragment(HomePageFragment.this).initiateScan();
+//                        }
+//                       break;
+                        // 厂区管理
+                        IntentIntegrator intentIntegrator = new IntentIntegrator(getActivity());
+                        intentIntegrator.setOrientationLocked(false);
+                        intentIntegrator.setCaptureActivity(QRActivity.class); // 设置自定义的activity是QRActivity
+                        intentIntegrator.setRequestCode(1002);
+                        intentIntegrator.initiateScan();
                         break;
                 }
             }
@@ -199,7 +235,7 @@ public class HomePageFragment extends MyFragment {
 
                         if (btnData.getData() != null) {
                             List<HomeBtnData.BtnData> btnDataLists = btnData.getData();
-                            btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", ""));
+                            btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", R.mipmap.main_peixun));
                             rateAdapter = new RateAdapter(getActivity(), btnDataLists);
 
                             //按钮点击事件

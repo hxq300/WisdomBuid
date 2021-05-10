@@ -42,9 +42,9 @@ public class HomeBtnData {
         //        {"id":1,"title_name":"main_anquanguanli","title_img":"main_anquanguanli.png"}
         private int id;
         private String title_name;
-        private String title_img;
+        private int title_img;
 
-        public BtnData(int id, String title_name, String title_img) {
+        public BtnData(int id, String title_name, int title_img) {
             this.id = id;
             this.title_name = title_name;
             this.title_img = title_img;
@@ -66,11 +66,11 @@ public class HomeBtnData {
             this.title_name = title_name;
         }
 
-        public String getTitle_img() {
+        public int getTitle_img() {
             return title_img;
         }
 
-        public void setTitle_img(String title_img) {
+        public void setTitle_img(int title_img) {
             this.title_img = title_img;
         }
     }

@@ -171,7 +171,6 @@ public class OKHttpClass {
         String time = (System.currentTimeMillis() + "").substring(0, 10);
         String url = resUrl + "timestamp=" + time + "&sign=" + MD5Utils.MD5(time, 32) + "&token=" + getToken(context);
         PostKeyValue(url, listcanshu);
-//        L.log(""+url);
     }
 
     /**

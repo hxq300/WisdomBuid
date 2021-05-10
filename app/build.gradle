@@ -9,8 +9,8 @@ android {
         applicationId "com.lsy.wisdombuid"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 100
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [qqappid: "你的qq appid"]
 
@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.android.support:design:29.0.0'
+
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
@@ -72,7 +73,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
     implementation 'com.squareup.okio:okio:1.12.0'
-        //多语言
+    // OkHttp log 拦截器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    //多语言
     implementation "com.github.jokar:multi-languages:0.0.7"
 
     //zxing
@@ -125,8 +128,6 @@ dependencies {
 //    implementation 'com.yuyh.easyadapter:library:1.2.0'
     implementation 'com.zhy:base-rvadapter:3.0.3'
 
-    // OkHttp log 拦截器
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 
     //完整版引入
     implementation 'com.shuyu:GSYVideoPlayer:7.0.1'

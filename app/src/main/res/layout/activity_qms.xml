@@ -33,6 +33,7 @@
                 android:textSize="15sp" />
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/safety_line_zhandian"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"

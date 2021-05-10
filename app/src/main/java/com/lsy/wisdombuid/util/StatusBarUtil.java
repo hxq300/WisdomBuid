@@ -27,12 +27,6 @@ public class StatusBarUtil {
     public final static int TYPE_FLYME = 1;
     public final static int TYPE_M = 3;//6.0
 
-    @IntDef({TYPE_MIUI,
-            TYPE_FLYME,
-            TYPE_M})
-    @Retention(RetentionPolicy.SOURCE)
-    @interface ViewType {
-    }
 
     /**
      * 修改状态栏颜色，支持4.4以上版本
@@ -121,6 +115,14 @@ public class StatusBarUtil {
         }
         return false;
     }
+
+    @IntDef({TYPE_MIUI,
+            TYPE_FLYME,
+            TYPE_M})
+    @Retention(RetentionPolicy.SOURCE)
+    @interface ViewType {
+    }
+
 
     /**
      * 设置 状态栏深色浅色切换
