@@ -355,6 +355,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_300"
                     android:layout_margin="@dimen/dp_21" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_sub_contractor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

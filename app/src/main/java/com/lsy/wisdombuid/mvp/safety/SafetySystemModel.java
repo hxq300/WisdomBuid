@@ -9,6 +9,7 @@ import com.lsy.wisdombuid.bean.StationData;
 import com.lsy.wisdombuid.request.OKHttpClass;
 import com.lsy.wisdombuid.request.RequestURL;
 import com.lsy.wisdombuid.tools.L;
+import com.socks.library.KLog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -86,7 +87,7 @@ public class SafetySystemModel implements SafetySystemInterface.Model {
             @Override
             public String requestData(String dataString) {
                 //请求成功数据回调
-                L.log("SafetySystem", "safetyZGL==" + dataString);
+               KLog.d("SafetySystem", "safetyZGL==" + dataString);
                 Gson gson = new Gson();
 
                 JSONObject jsonObject = null;
@@ -126,7 +127,7 @@ public class SafetySystemModel implements SafetySystemInterface.Model {
             @Override
             public String requestData(String dataString) {
                 //请求成功数据回调
-                L.log("SafetySystem", "countQualityshow==" + dataString);
+             KLog.d("SafetySystem", "countQualityshow==" + dataString);
                 Gson gson = new Gson();
 
                 JSONObject jsonObject = null;

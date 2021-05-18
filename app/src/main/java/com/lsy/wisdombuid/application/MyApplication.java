@@ -10,6 +10,7 @@ import com.github.jokar.multilanguages.library.LanguageLocalListener;
 import com.github.jokar.multilanguages.library.MultiLanguage;
 import com.lsy.wisdombuid.config.BuildConfig;
 import com.lsy.wisdombuid.util.LocalManageUtil;
+import com.socks.library.KLog;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.commonsdk.UMConfigure;
@@ -22,25 +23,9 @@ import java.util.Locale;
 
 /**
  * Created by lsy on 2020/3/18
- * todo :
+ * todo :  加载各种 工具  初始化操作
  */
 public class MyApplication extends Application {
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        //第一次进入app时保存系统选择语言(为了选择随系统语言时使用，如果不保存，切换语言后就拿不到了）
-        LocalManageUtil.saveSystemCurrentLanguage(base);
-        super.attachBaseContext(MultiLanguage.setLocal(base));
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        //用户在系统设置页面切换语言时保存系统选择语言(为了选择随系统语言时使用，如果不保存，切换语言后就拿不到了）
-        LocalManageUtil.saveSystemCurrentLanguage(getApplicationContext(), newConfig);
-        MultiLanguage.onConfigurationChanged(getApplicationContext());
-    }
 
     @Override
     public void onCreate() {
@@ -48,17 +33,15 @@ public class MyApplication extends Application {
         SDKInitializer.initialize(getApplicationContext());
         // 监控bug
         initBuggly();
+        //加载KLog
+        KLog.init(BuildConfig.LOG_DEBUG);
+        //多语言
+        initMultiLanguage();
+        //加载UMeng
+        initUmeng();
+    }
 
-        MultiLanguage.init(new LanguageLocalListener() {
-            @Override
-            public Locale getSetLanguageLocale(Context context) {
-                //返回自己本地保存选择的语言设置
-//                ToastUtils.showBottomToast(getApplicationContext(),"本地的语言设置为"+);
-                return LocalManageUtil.getSetLanguageLocale(context);
-            }
-        });
-        MultiLanguage.setApplicationLanguage(this);
-
+    private void initUmeng() {
         /**
          * 初始化common库
          * 参数1:上下文，必须的参数，不能为空
@@ -74,8 +57,34 @@ public class MyApplication extends Application {
         PlatformConfig.setWeixin("wxb84da87b1cd5b514", "a1b8c406aae029e121d70abbcd359fd9");//微信APPID和AppSecret
 //        PlatformConfig.setQQZone("你的QQAPPID", "你的QQAppSecret");//QQAPPID和AppSecret
         PlatformConfig.setSinaWeibo("1206676783", "f9bfdf9bf12ad99d448f88e24bfd0258", "http://sns.whalecloud.com/sina2/callback");//微博
+    }
 
+    private void initMultiLanguage() {
+        MultiLanguage.init(new LanguageLocalListener() {
+            @Override
+            public Locale getSetLanguageLocale(Context context) {
+                //返回自己本地保存选择的语言设置
+//                ToastUtils.showBottomToast(getApplicationContext(),"本地的语言设置为"+);
+                return LocalManageUtil.getSetLanguageLocale(context);
+            }
+        });
+        MultiLanguage.setApplicationLanguage(this);
+    }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        //第一次进入app时保存系统选择语言(为了选择随系统语言时使用，如果不保存，切换语言后就拿不到了）
+        LocalManageUtil.saveSystemCurrentLanguage(base);
+        super.attachBaseContext(MultiLanguage.setLocal(base));
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        //用户在系统设置页面切换语言时保存系统选择语言(为了选择随系统语言时使用，如果不保存，切换语言后就拿不到了）
+        LocalManageUtil.saveSystemCurrentLanguage(getApplicationContext(), newConfig);
+        MultiLanguage.onConfigurationChanged(getApplicationContext());
     }
 
     private void initBuggly() {

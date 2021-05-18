@@ -130,7 +130,7 @@ public class HomePageFragment extends MyFragment {
         //btnDataLists.add(new HomeBtnData.BtnData(6, "安全体验", R.mipmap.main_anquanguanli));
         btnDataLists.add(new HomeBtnData.BtnData(6, "质量管理", R.mipmap.main_zhiliangguanli));
         //btnDataLists.add(new HomeBtnData.BtnData(100, "整改上报", R.mipmap.main_zhenggaishangbao));
-        btnDataLists.add(new HomeBtnData.BtnData(200, "厂区管理", R.mipmap.main_changquguanli));
+        //btnDataLists.add(new HomeBtnData.BtnData(200, "厂区管理", R.mipmap.main_changquguanli));
         rateAdapter = new RateAdapter(getActivity(), btnDataLists);
         rateRecycle.setAdapter(rateAdapter);
         adapterSetOnClick(rateAdapter);

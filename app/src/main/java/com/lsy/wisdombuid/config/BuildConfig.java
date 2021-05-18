@@ -7,6 +7,8 @@ package com.lsy.wisdombuid.config;
 public class BuildConfig {
 
     public static final String BUGLY_APPID = "3af966a5-5159-434f-b07e-a3db9e46b285";
+    //Klog的开关判断
+    public static final boolean LOG_DEBUG = true;
 
     public BuildConfig() {
     }

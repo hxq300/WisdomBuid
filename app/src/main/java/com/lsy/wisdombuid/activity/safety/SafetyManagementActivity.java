@@ -62,7 +62,7 @@ import static com.umeng.socialize.utils.ContextUtil.getContext;
  */
 public class SafetyManagementActivity extends MyBaseActivity implements SafetySystemInterface.View, ZhandianAdapter.OnClick {
 
-
+    private static final String TAG = "SafetyManagementActivit";
     private LinearLayout lineZhandain;
     private PopupWindow popupWindow;
     private List<String> zdDatas = new ArrayList<>();
@@ -319,6 +319,8 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
             public String requestData(String dataString) {
                 Gson gson = new Gson();
 
+
+
                 SafetyUnitEntity safetyUnitEntity = gson.fromJson(dataString, SafetyUnitEntity.class);
                 List<SafetyUnitEntity.DataBean> data = safetyUnitEntity.getData();
                 for (SafetyUnitEntity.DataBean datum : data) {
@@ -343,7 +345,7 @@ public class SafetyManagementActivity extends MyBaseActivity implements SafetySy
             @Override
             public String requestData(String dataString) {
                 Gson gson = new Gson();
-
+                Log.d(TAG, "requestData: 1111111"+dataString );
                 SafetyTypeEntity safetyTypeEntity = gson.fromJson(dataString, SafetyTypeEntity.class);
                 List<SafetyTypeEntity.DataBean> data = safetyTypeEntity.getData();
                 setChartData(data);

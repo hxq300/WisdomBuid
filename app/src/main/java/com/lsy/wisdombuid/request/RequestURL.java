@@ -6,9 +6,9 @@ package com.lsy.wisdombuid.request;
  */
 public class RequestURL {
     // 测试服
-   public static String RequestUrl = "http://192.168.1.103:8891";
+   //  public static String RequestUrl = "http://192.168.1.103:8891";
     // 正式服
-   // public static String RequestUrl = "http://101.132.154.10:8891";
+    public static String RequestUrl = "http://101.132.154.10:8891";
 
     public static String RequestImg = "http://101.132.154.10:8891/img/download_img?img_url=";
     public static String OssUrl = "http://jjjt.oss-cn-shanghai.aliyuncs.com/";
@@ -25,9 +25,9 @@ public class RequestURL {
     public static String selectStation = RequestUrl + "/station/SelectStation?";//下拉框查询站点信息(站点  固定)
 
     // 物料检测
-    public static String materialMonitoringSystem = RequestUrl+ "/Environment/FindEnvironment?";// 查询最近一条扬尘检测仪数据
+    public static String materialMonitoringSystem = RequestUrl + "/Environment/FindEnvironment?";// 查询最近一条扬尘检测仪数据
 
- //   public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101181410";// 一周天气详情
+    //   public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101181410";// 一周天气详情
     public static String weatherUrl = "https://www.tianqiapi.com/api?version=v1&appid=53622763&appsecret=NFgVUwV2&cityid=101180805";// 一周天气详情
 
 
@@ -102,6 +102,9 @@ public class RequestURL {
     //---------安全管理内部的统计图
     public static String safetyType = RequestUrl + "/count_App/CountRiskshowByRiskId?"; //根据安全隐患类型查询数量总数
     public static String safetyUnit = RequestUrl + "/count_App/CountRiskshowBySubId?"; //根据分包单位查询安全隐患数量总数
+    //---------质量管理内部的统计图
+    public static String qualityType = RequestUrl + "/count_App/CountQualityshowByRiskId?"; //根据分包单位查询安全隐患数量总数
+    public static String qualityUnit = RequestUrl + "/count_App/CountQualityshowBySubId?"; //根据分包单位查询安全隐患数量总数
 
     // 存梁
     public static String FindStorageGirderById = RequestUrl + "/StorageGirder/FindStorageGirderById?"; //根据id查询存梁区信息
@@ -117,14 +120,6 @@ public class RequestURL {
     public static String FindManufactureGirderById = RequestUrl + "/ManufactureGirder/FindManufactureGirderById?"; //根据id查询制梁区信息
     public static String FindManufactureGirder = RequestUrl + "/ManufactureGirder/FindManufactureGirder?"; //查询制梁区信息
     public static String UpdateManufactureGirder = RequestUrl + "/ManufactureGirder/UpdateManufactureGirder?"; //修改制梁区信息
-
-
-
-
-
-
-
-
 
 
 }

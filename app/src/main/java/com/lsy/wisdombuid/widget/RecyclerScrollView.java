@@ -14,6 +14,7 @@ public class RecyclerScrollView extends ScrollView {
     private int slop;
     private int touch;
 
+
     public RecyclerScrollView(Context context) {
         super(context);
         setSlop(context);

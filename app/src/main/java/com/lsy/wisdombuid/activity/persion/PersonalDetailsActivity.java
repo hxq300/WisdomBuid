@@ -48,8 +48,6 @@ public class PersonalDetailsActivity extends BaseActivity {
     ImageView persionalImage;
     @BindView(R.id.persional_type)
     TextView persionalType;
-    @BindView(R.id.persional_phone)
-    TextView persionalPhone;
     @BindView(R.id.persional_jifen)
     TextView persionalJifen;
     @BindView(R.id.persional_xiuangmu)
@@ -66,6 +64,14 @@ public class PersonalDetailsActivity extends BaseActivity {
     TextView persionalIsYingjichuzhi;
     @BindView(R.id.persional_name)
     TextView persionalName;
+    @BindView(R.id.persional_profession)
+    TextView persionalProfession;
+    @BindView(R.id.persional_staff_phone)
+    TextView persionalStaffPhone;
+    @BindView(R.id.persional_sub_name)
+    TextView persionalSubName;
+    @BindView(R.id.persional_bumen)
+    TextView persionalBumen;
 
 
     @BindView(R.id.id_xingwei_recycler)
@@ -165,29 +171,9 @@ public class PersonalDetailsActivity extends BaseActivity {
                         initJobLog();
                     }
 
-
                     imformationData = gson.fromJson(data, PerImformationData.class);
-
-                    if (imformationData.getStaff_img() != null) {
-                        Glide.with(PersonalDetailsActivity.this).load(RequestURL.RequestImg + imformationData.getStaff_img())
-                                .error(R.mipmap.mine_head)
-                                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                                .into(persionalImage);
-                    }
-
-                    if (imformationData.getStaff_name() != null) {
-                        persionalName.setText("" + imformationData.getStaff_name());
-                    }
-
-                    if (imformationData.getType() != null) {
-                        persionalType.setText("" + imformationData.getType());
-                    }
-
-                    if (imformationData.getDepartment_name() != null) {
-                        persionalPhone.setText("" + imformationData.getDepartment_name());
-                    }
-
-                    persionalJifen.setText("" + imformationData.getEnd_integral());
+                    //为界面设置 信息
+                    setShowData();
 
 
                 } catch (JSONException e) {
@@ -214,6 +200,78 @@ public class PersonalDetailsActivity extends BaseActivity {
             }
 
         });
+
+    }
+
+    private void setShowData() {
+        if (imformationData.getStaff_img() != null) {
+            Glide.with(PersonalDetailsActivity.this).load(RequestURL.RequestImg + imformationData.getStaff_img())
+                    .error(R.mipmap.mine_head)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(persionalImage);
+        }
+
+        if (imformationData.getWorktype_name() != null) {
+            persionalProfession.setText("" + imformationData.getWorktype_name());
+        }
+
+        if (imformationData.getStaff_phone() != null) {
+            persionalStaffPhone.setText("" + imformationData.getStaff_phone());
+        }
+
+        if (imformationData.getStaff_name() != null) {
+            persionalName.setText("" + imformationData.getStaff_name());
+        }
+        if (imformationData.getDepartment_name() != null) {
+            persionalBumen.setText("" + imformationData.getDepartment_name());
+        }
+        if (imformationData.getType() != null) {
+            persionalType.setText("" + imformationData.getType());
+        }
+        if (imformationData.getSub_name() != null) {
+            persionalSubName.setText("" + imformationData.getSub_name());
+        }
+
+
+        persionalJifen.setText("" + imformationData.getEnd_integral());
+
+        if (imformationData.getSection_name() != null && imformationData.getSection_name() != null) {
+            persionalXiuangmu.setText("" + imformationData.getSection_name() + "/" + imformationData.getStation_name());
+        }
+
+        if (imformationData.getTrain() != null) {
+            if (imformationData.getTrain().equals("0")) {
+                persionalIsPeixun.setText("未培训");
+            }
+            if (imformationData.getTrain().equals("1")) {
+                persionalIsPeixun.setText("已培训");
+            }
+        }
+        if (imformationData.getTrain_jd() != null) {
+            if (imformationData.getTrain_jd().equals("0")) {
+                persionalIsJiaodi.setText("未交底");
+            }
+            if (imformationData.getTrain_jd().equals("1")) {
+                persionalIsJiaodi.setText("已交底");
+            }
+        }
+        if (imformationData.getTrain_qd() != null) {
+            if (imformationData.getTrain_qd().equals("0")) {
+                persionalIsQianding.setText("未签订");
+            }
+            if (imformationData.getTrain_qd().equals("1")) {
+                persionalIsQianding.setText("已签订");
+            }
+        }
+        if (imformationData.getTrain_gz() != null) {
+            if (imformationData.getTrain_gz().equals("0")) {
+                persionalIsBaogao.setText("未告知");
+            }
+            if (imformationData.getTrain_gz().equals("1")) {
+                persionalIsBaogao.setText("已告知");
+            }
+        }
+
 
     }
 
